@@ -1548,6 +1548,8 @@ export default function App() {
               onToggleSave={toggleSave}
               onBack={() => navigateTo(previousScreen === 'detalhe' ? 'guia' : previousScreen)}
               onOpenEmergency={() => setIsEmergencyModalOpen(true)}
+              onOpenMap={() => navigateTo('mapa')}
+              onOpenChecklist={() => navigateTo('checklist')}
             />
           )}
         </main>
