@@ -262,7 +262,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
               <div className="flex items-center gap-2 min-w-0">
                 <button
                   onClick={onBack}
-                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-[#1b261d] hover:bg-[#253628] text-[pk-accent] font-bold text-xs border border-[#2d3f30] transition-colors shadow-xs cursor-pointer active:scale-95 shrink-0"
+                  className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-[#1b261d] hover:bg-[#253628] text-pk-accent font-bold text-xs border border-[#2d3f30] transition-colors shadow-xs cursor-pointer active:scale-95 shrink-0"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span className="hidden xs:inline">Voltar</span>
@@ -286,7 +286,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
               <div className="p-0.5 bg-[#1b261d] rounded-xl flex text-xs font-bold shrink-0 border border-[#28382a]">
                 <button
                   onClick={() => setViewMode('map')}
-                  className="px-2.5 py-1.5 rounded-lg transition-all flex items-center gap-1 cursor-pointer bg-[pk-accent] text-[#121a13] font-extrabold shadow-xs"
+                  className="px-2.5 py-1.5 rounded-lg transition-all flex items-center gap-1 cursor-pointer bg-pk-accent text-[#121a13] font-extrabold shadow-xs"
                 >
                   <MapIcon className="w-3.5 h-3.5" />
                   <span className="text-[11px]">Mapa</span>
@@ -329,7 +329,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
                   onClick={() => setActiveFilter('todos')}
                   className={`px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap transition-all cursor-pointer ${
                     activeFilter === 'todos'
-                      ? 'bg-[pk-accent] text-[#121a13]'
+                      ? 'bg-pk-accent text-[#121a13]'
                       : 'bg-[#1b261d] text-[#8e9c89] hover:text-white border border-[#28382a]'
                   }`}
                 >
@@ -339,7 +339,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
                   onClick={() => setActiveFilter('soro')}
                   className={`px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap transition-all cursor-pointer ${
                     activeFilter === 'soro'
-                      ? 'bg-[pk-accent] text-[#121a13]'
+                      ? 'bg-pk-accent text-[#121a13]'
                       : 'bg-[#1b261d] text-[#8e9c89] hover:text-white border border-[#28382a]'
                   }`}
                 >
@@ -349,7 +349,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
                   onClick={() => setActiveFilter('ciatox')}
                   className={`px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap transition-all cursor-pointer ${
                     activeFilter === 'ciatox'
-                      ? 'bg-[pk-accent] text-[#121a13]'
+                      ? 'bg-pk-accent text-[#121a13]'
                       : 'bg-[#1b261d] text-[#8e9c89] hover:text-white border border-[#28382a]'
                   }`}
                 >
@@ -359,7 +359,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
                   onClick={() => setActiveFilter('hospitais')}
                   className={`px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap transition-all cursor-pointer ${
                     activeFilter === 'hospitais'
-                      ? 'bg-[pk-accent] text-[#121a13]'
+                      ? 'bg-pk-accent text-[#121a13]'
                       : 'bg-[#1b261d] text-[#8e9c89] hover:text-white border border-[#28382a]'
                   }`}
                 >
@@ -396,11 +396,11 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
             <button
               onClick={handleRequestLocation}
               disabled={isLocating}
-              className="w-12 h-12 rounded-2xl bg-[#121913]/95 backdrop-blur-md border border-[#28382a] text-[pk-accent] shadow-xl flex items-center justify-center hover:bg-[#1b261d] transition-all cursor-pointer active:scale-95"
+              className="w-12 h-12 rounded-2xl bg-[#121913]/95 backdrop-blur-md border border-[#28382a] text-pk-accent shadow-xl flex items-center justify-center hover:bg-[#1b261d] transition-all cursor-pointer active:scale-95"
               title="Centralizar na minha localização GPS"
               aria-label="Minha localização"
             >
-              <Navigation className={`w-5 h-5 ${isLocating ? 'animate-spin text-[pk-danger]' : 'text-[pk-accent]'}`} />
+              <Navigation className={`w-5 h-5 ${isLocating ? 'animate-spin text-pk-danger' : 'text-pk-accent'}`} />
             </button>
           </div>
 
@@ -414,7 +414,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
           <div className="flex items-center justify-between gap-2 bg-[#121913] p-3 rounded-2xl border border-[#233125]">
             <button
               onClick={onBack}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-[#1b261d] text-[pk-accent] font-bold text-xs border border-[#2d3f30]"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-[#1b261d] text-pk-accent font-bold text-xs border border-[#2d3f30]"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Voltar</span>
@@ -425,7 +425,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
             </div>
             <button
               onClick={() => setViewMode('map')}
-              className="px-3 py-1.5 rounded-xl bg-[pk-accent] text-[#121a13] font-black text-xs flex items-center gap-1"
+              className="px-3 py-1.5 rounded-xl bg-pk-accent text-[#121a13] font-black text-xs flex items-center gap-1"
             >
               <MapIcon className="w-3.5 h-3.5" />
               <span>Ver no Mapa</span>
@@ -446,14 +446,14 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
                 <div className="flex items-start justify-between gap-3">
                   <div className="space-y-1 flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#1b261d] text-[pk-accent] border border-[#2d3f30]">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#1b261d] text-pk-accent border border-[#2d3f30]">
                         {unit.tipoLabel}
                       </span>
-                      <span className="text-xs font-extrabold text-[pk-danger] tabular-nums">
+                      <span className="text-xs font-extrabold text-pk-danger tabular-nums">
                         ~{unit.distanceKm} km
                       </span>
                     </div>
-                    <h3 className="text-sm sm:text-base font-extrabold text-white group-hover:text-[pk-accent] transition-colors">
+                    <h3 className="text-sm sm:text-base font-extrabold text-white group-hover:text-pk-accent transition-colors">
                       {unit.nome}
                     </h3>
                     <p className="text-xs text-[#8e9c89]">
@@ -481,13 +481,13 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
                   <a
                     href={`tel:${unit.telefone.replace(/\D/g, '')}`}
                     onClick={(e) => e.stopPropagation()}
-                    className="text-xs font-bold text-[pk-accent] hover:underline flex items-center gap-1"
+                    className="text-xs font-bold text-pk-accent hover:underline flex items-center gap-1"
                   >
                     <Phone className="w-3.5 h-3.5" />
                     <span>Ligar ({unit.telefone})</span>
                   </a>
 
-                  <span className="text-xs font-bold text-[pk-danger] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  <span className="text-xs font-bold text-pk-danger flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     <span>Ver detalhes ↗</span>
                   </span>
                 </div>
@@ -511,10 +511,10 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
             <div className="flex items-start justify-between gap-3">
               <div className="space-y-1 min-w-0 flex-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#1b261d] text-[pk-accent] border border-[#2d3f30]">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#1b261d] text-pk-accent border border-[#2d3f30]">
                     {selectedUnit.tipoLabel}
                   </span>
-                  <span className="text-xs font-extrabold text-[pk-danger] tabular-nums">
+                  <span className="text-xs font-extrabold text-pk-danger tabular-nums">
                     ~{calculateDistanceKm(userLocation.lat, userLocation.lng, selectedUnit.latitude, selectedUnit.longitude)} km
                   </span>
                 </div>
@@ -551,9 +551,9 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
 
             {/* Aviso Obrigatório: Disponibilidade de soro sob consulta */}
             <div className="p-3.5 bg-orange-950/40 rounded-2xl border border-orange-800/60 text-xs text-orange-200 flex gap-2.5">
-              <AlertTriangle className="w-5 h-5 text-[pk-danger] shrink-0 mt-0.5" />
+              <AlertTriangle className="w-5 h-5 text-pk-danger shrink-0 mt-0.5" />
               <div className="space-y-1">
-                <strong className="block font-extrabold text-sm text-[pk-danger-border]">
+                <strong className="block font-extrabold text-sm text-pk-danger-border">
                   Disponibilidade de soro sob consulta:
                 </strong>
                 <p className="leading-relaxed">
@@ -589,7 +589,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
             <div className="grid grid-cols-2 gap-2.5 pt-1">
               <a
                 href={`tel:${selectedUnit.telefone.replace(/\D/g, '')}`}
-                className="py-3 px-4 rounded-xl bg-[pk-accent] hover:bg-[#cbf033] text-[#121a13] text-xs sm:text-sm font-black flex items-center justify-center gap-2 shadow-md transition-colors"
+                className="py-3 px-4 rounded-xl bg-pk-accent hover:bg-[#cbf033] text-[#121a13] text-xs sm:text-sm font-black flex items-center justify-center gap-2 shadow-md transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#121a13]" />
                 <span>Ligar: {selectedUnit.telefone}</span>
@@ -599,7 +599,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
                 href={`https://www.google.com/maps/dir/?api=1&destination=${selectedUnit.latitude},${selectedUnit.longitude}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3 px-4 rounded-xl bg-[pk-danger] hover:bg-[pk-danger-strong] text-white text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-md transition-colors"
+                className="py-3 px-4 rounded-xl bg-pk-danger hover:bg-pk-danger-strong text-white text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-md transition-colors"
               >
                 <Navigation className="w-4 h-4" />
                 <span>Como Chegar ↗</span>

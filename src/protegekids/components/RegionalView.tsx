@@ -101,7 +101,7 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
       <div>
         <button
           onClick={onBack}
-          className="flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-pk-card border border-[pk-border] text-[pk-primary] font-bold text-xs hover:bg-[pk-surface] transition-colors shadow-xs cursor-pointer"
+          className="flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-pk-card border border-pk-border text-pk-primary font-bold text-xs hover:bg-pk-surface transition-colors shadow-xs cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Voltar</span>
@@ -110,13 +110,13 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
 
       {/* Header */}
       <div className="space-y-1">
-        <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
+        <span className="text-[11px] font-extrabold uppercase tracking-wider text-pk-primary">
           Prevenção contextual
         </span>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-[pk-text] tracking-tight leading-tight">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-pk-text tracking-tight leading-tight">
           Regional: hábitos<br />e épocas 🌦️
         </h1>
-        <p className="text-xs sm:text-sm text-[pk-muted] font-medium leading-relaxed max-w-md pt-0.5">
+        <p className="text-xs sm:text-sm text-pk-muted font-medium leading-relaxed max-w-md pt-0.5">
           Escolha a região manualmente e marque os cuidados que você já fez. Esta versão não acessa sua localização precisa.
         </p>
       </div>
@@ -127,10 +127,10 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
         <div className="space-y-2">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <span className="text-[10px] font-extrabold uppercase tracking-wider text-[pk-primary]">
+              <span className="text-[10px] font-extrabold uppercase tracking-wider text-pk-primary">
                 Consulta Geográfica
               </span>
-              <h2 className="text-base font-extrabold text-[pk-text]">
+              <h2 className="text-base font-extrabold text-pk-text">
                 Qual região você quer consultar?
               </h2>
             </div>
@@ -139,7 +139,7 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
             </span>
           </div>
 
-          <p className="text-xs text-[pk-muted] leading-relaxed">
+          <p className="text-xs text-pk-muted leading-relaxed">
             Para dados específicos, consulte fontes oficiais do seu município ou estado.
           </p>
 
@@ -147,7 +147,7 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
             <select
               value={selectedRegion}
               onChange={(e) => setSelectedRegion(e.target.value)}
-              className="w-full border border-[#c5d5b7] bg-pk-card rounded-2xl px-3.5 py-3 text-sm font-extrabold text-[pk-text] outline-none focus:ring-2 focus:ring-[pk-primary]/30 transition-all cursor-pointer shadow-xs"
+              className="w-full border border-[#c5d5b7] bg-pk-card rounded-2xl px-3.5 py-3 text-sm font-extrabold text-pk-text outline-none focus:ring-2 focus:ring-pk-primary/30 transition-all cursor-pointer shadow-xs"
               aria-label="Selecionar Região do Brasil"
             >
               <option value="Centro-Oeste">Centro-Oeste</option>
@@ -163,7 +163,7 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
         <div className="pt-3 border-t border-[#d3dfc7] space-y-2">
           <div className="flex items-center gap-2">
             <span className="text-2xl" aria-hidden="true">{currentRegionInfo.emoji}</span>
-            <h3 className="text-base sm:text-lg font-extrabold text-[pk-text]">
+            <h3 className="text-base sm:text-lg font-extrabold text-pk-text">
               {currentRegionInfo.title}
             </h3>
           </div>
@@ -176,10 +176,10 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
       {/* Seasons */}
       <div className="space-y-2.5">
         <div>
-          <h2 className="text-base font-extrabold text-[pk-text]">
+          <h2 className="text-base font-extrabold text-pk-text">
             Épocas do ano
           </h2>
-          <p className="text-xs text-[pk-muted] mt-0.5">
+          <p className="text-xs text-pk-muted mt-0.5">
             Escolha a estação para ver cuidados gerais. A estação, sozinha, não confirma maior frequência de uma espécie.
           </p>
         </div>
@@ -193,13 +193,13 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
                 onClick={() => setSelectedSeason(season.name)}
                 className={`p-3.5 rounded-2xl border text-left transition-all ${
                   isActive
-                    ? 'border-[pk-primary] bg-[#f2f7e9] ring-2 ring-[pk-primary]/20 shadow-xs'
-                    : 'border-[pk-border] bg-pk-card hover:border-[pk-border]'
+                    ? 'border-pk-primary bg-[#f2f7e9] ring-2 ring-pk-primary/20 shadow-xs'
+                    : 'border-pk-border bg-pk-card hover:border-pk-border'
                 }`}
               >
                 <span className="text-2xl block mb-1.5">{season.emoji}</span>
-                <b className="text-xs font-bold text-[pk-text] block">{season.name}</b>
-                <small className="text-[11px] text-[pk-muted] block leading-tight mt-1">
+                <b className="text-xs font-bold text-pk-text block">{season.name}</b>
+                <small className="text-[11px] text-pk-muted block leading-tight mt-1">
                   {season.tip}
                 </small>
               </button>
@@ -210,7 +210,7 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
 
       {/* Notice */}
       <div className="bg-[#fff0dc] rounded-2xl p-4 border border-[#fedbb3] flex gap-3 text-xs text-[#7c4818]">
-        <Info className="w-5 h-5 text-[pk-danger] shrink-0 mt-0.5" />
+        <Info className="w-5 h-5 text-pk-danger shrink-0 mt-0.5" />
         <div>
           <b className="block text-sm font-bold text-[#8a4e16] mb-0.5">Sem previsões não verificadas</b>
           <span>Frequência regional e sazonal só deve ser exibida com fonte confiável, específica e atualizada da vigilância em saúde local.</span>
@@ -218,16 +218,16 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
       </div>
 
       {/* Prevention Checklist */}
-      <div className="bg-pk-card rounded-3xl p-5 border border-[pk-border] space-y-4 shadow-xs" id="checklist">
+      <div className="bg-pk-card rounded-3xl p-5 border border-pk-border space-y-4 shadow-xs" id="checklist">
         <div className="flex items-center justify-between">
-          <h2 className="text-base font-extrabold text-[pk-text]">
+          <h2 className="text-base font-extrabold text-pk-text">
             Checklist de prevenção
           </h2>
-          <span className="text-xs font-bold px-2.5 py-1 rounded-xl bg-[pk-surface] text-[pk-primary] tabular-nums">
+          <span className="text-xs font-bold px-2.5 py-1 rounded-xl bg-pk-surface text-pk-primary tabular-nums">
             {done} de {total}
           </span>
         </div>
-        <p className="text-xs text-[pk-muted] -mt-2">
+        <p className="text-xs text-pk-muted -mt-2">
           Marque os cuidados realizados em casa ou antes de uma atividade ao ar livre.
         </p>
 
@@ -243,13 +243,13 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
                   type="checkbox"
                   checked={isChecked}
                   onChange={() => toggleCheck(item.id)}
-                  className="w-5 h-5 rounded-md accent-[pk-primary] mt-0.5 shrink-0 cursor-pointer"
+                  className="w-5 h-5 rounded-md accent-pk-primary mt-0.5 shrink-0 cursor-pointer"
                 />
                 <span className="flex-1 min-w-0">
-                  <b className={`text-xs block font-bold ${isChecked ? 'line-through text-[#8b9284]' : 'text-[pk-text]'}`}>
+                  <b className={`text-xs block font-bold ${isChecked ? 'line-through text-[#8b9284]' : 'text-pk-text'}`}>
                     {item.title}
                   </b>
-                  <small className="text-[11px] text-[pk-muted] block leading-snug mt-0.5">
+                  <small className="text-[11px] text-pk-muted block leading-snug mt-0.5">
                     {item.desc}
                   </small>
                 </span>
@@ -262,7 +262,7 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
         <div className="space-y-1.5 pt-2">
           <div className="w-full h-2 bg-[#e9eee1] rounded-full overflow-hidden">
             <div
-              className="h-full bg-[pk-primary] rounded-full transition-all duration-300"
+              className="h-full bg-pk-primary rounded-full transition-all duration-300"
               style={{ width: `${percent}%` }}
             />
           </div>
@@ -274,16 +274,16 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
 
         <button
           onClick={resetChecklist}
-          className="w-full py-3 rounded-xl bg-[pk-primary] hover:bg-[pk-primary-strong] text-white font-extrabold text-xs transition-colors shadow-xs"
+          className="w-full py-3 rounded-xl bg-pk-primary hover:bg-pk-primary-strong text-white font-extrabold text-xs transition-colors shadow-xs"
         >
           Desmarcar checklist
         </button>
       </div>
 
       {/* Official Sources Card */}
-      <div className="bg-pk-card rounded-3xl p-5 border border-[pk-border] space-y-2.5 shadow-xs">
-        <h3 className="text-sm font-bold text-[pk-text]">Consultar fontes oficiais</h3>
-        <p className="text-xs text-[pk-muted] leading-relaxed">
+      <div className="bg-pk-card rounded-3xl p-5 border border-pk-border space-y-2.5 shadow-xs">
+        <h3 className="text-sm font-bold text-pk-text">Consultar fontes oficiais</h3>
+        <p className="text-xs text-pk-muted leading-relaxed">
           Para dados de ocorrência, sazonalidade e alertas, consulte a vigilância em saúde local.
         </p>
         <div className="space-y-1 pt-1 text-xs">
@@ -292,7 +292,7 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
               href="https://www.gov.br/saude/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[pk-primary] font-bold hover:underline inline-flex items-center gap-1"
+              className="text-pk-primary font-bold hover:underline inline-flex items-center gap-1"
             >
               <span>Ministério da Saúde</span>
               <ExternalLink className="w-3 h-3" />
@@ -303,7 +303,7 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
               href="https://portal.fiocruz.br/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[pk-primary] font-bold hover:underline inline-flex items-center gap-1"
+              className="text-pk-primary font-bold hover:underline inline-flex items-center gap-1"
             >
               <span>Fiocruz</span>
               <ExternalLink className="w-3 h-3" />

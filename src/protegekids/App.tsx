@@ -242,25 +242,25 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen ${currentScreen === 'mapa' ? 'bg-[#0b100c] overflow-hidden' : 'bg-[pk-bg]'} text-[pk-text] font-sans flex flex-col justify-between antialiased`}>
+    <div className={`min-h-screen ${currentScreen === 'mapa' ? 'bg-[#0b100c] overflow-hidden' : 'bg-pk-bg'} text-pk-text font-sans flex flex-col justify-between antialiased`}>
       {/* Top Main Application Shell */}
-      <div className={`w-full ${currentScreen === 'mapa' ? 'max-w-none h-screen overflow-hidden pb-14' : 'max-w-xl mx-auto min-h-screen pb-28 sm:pb-32 sm:border-x sm:border-[pk-border] sm:shadow-lg bg-[pk-bg]'} flex flex-col relative`}>
+      <div className={`w-full ${currentScreen === 'mapa' ? 'max-w-none h-screen overflow-hidden pb-14' : 'max-w-xl mx-auto min-h-screen pb-28 sm:pb-32 sm:border-x sm:border-pk-border sm:shadow-lg bg-pk-bg'} flex flex-col relative`}>
         
         {/* Top Header — Exibido na página de início */}
         {currentScreen === 'inicio' && (
-          <header className="sticky top-0 z-30 bg-[pk-bg]/90 backdrop-blur-md border-b border-[pk-border]/80 px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+          <header className="sticky top-0 z-30 bg-pk-bg/90 backdrop-blur-md border-b border-pk-border/80 px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
             <button 
               onClick={() => navigateTo('inicio')}
               className="flex items-center gap-2.5 text-left group cursor-pointer"
             >
-              <div className="w-9 h-9 rounded-2xl bg-[pk-accent] flex items-center justify-center font-black text-lg text-[pk-primary] shadow-xs group-hover:scale-105 transition-transform">
+              <div className="w-9 h-9 rounded-2xl bg-pk-accent flex items-center justify-center font-black text-lg text-pk-primary shadow-xs group-hover:scale-105 transition-transform">
                 ✳
               </div>
               <div>
-                <span className="font-extrabold text-xl tracking-tight text-[pk-text]">
-                  protege<span className="text-[pk-primary]">kids</span>
+                <span className="font-extrabold text-xl tracking-tight text-pk-text">
+                  protege<span className="text-pk-primary">kids</span>
                 </span>
-                <span className="block text-[10px] text-[pk-muted] font-semibold -mt-1">
+                <span className="block text-[10px] text-pk-muted font-semibold -mt-1">
                   Guia de cuidado infantil
                 </span>
               </div>
@@ -270,10 +270,10 @@ export default function App() {
               {/* Direct Emergency Button */}
               <button
                 onClick={() => setIsEmergencyModalOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[pk-danger-bg] hover:bg-[pk-danger-border] text-[pk-danger-strong] text-xs font-bold transition-all border border-[pk-danger-border]/60 active:scale-95 cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-pk-danger-bg hover:bg-pk-danger-border text-pk-danger-strong text-xs font-bold transition-all border border-pk-danger-border/60 active:scale-95 cursor-pointer"
                 title="Abrir canais de emergência (SAMU 192)"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[pk-danger]" />
+                <PhoneCall className="w-3.5 h-3.5 text-pk-danger" />
                 <span className="hidden xs:inline">SOS</span>
                 <span>192</span>
               </button>
@@ -281,7 +281,7 @@ export default function App() {
               {/* Profile trigger */}
               <button
                 onClick={() => navigateTo('perfil')}
-                className="w-9 h-9 rounded-full flex items-center justify-center transition-colors text-sm font-bold cursor-pointer bg-[pk-surface] text-[pk-text] hover:bg-[pk-surface]"
+                className="w-9 h-9 rounded-full flex items-center justify-center transition-colors text-sm font-bold cursor-pointer bg-pk-surface text-pk-text hover:bg-pk-surface"
                 aria-label="Meu perfil e fontes"
               >
                 <User className="w-4 h-4" />
@@ -292,19 +292,19 @@ export default function App() {
 
         {/* Top Header — Exibido em TODAS as outras telas (exceto início e mapa que possui HUD próprio de tela cheia) */}
         {currentScreen !== 'inicio' && currentScreen !== 'mapa' && (
-          <header className="sticky top-0 z-30 bg-[pk-bg]/95 backdrop-blur-md border-b border-[pk-border]/80 px-3.5 sm:px-6 py-2.5 flex items-center justify-between gap-2.5 shadow-xs">
+          <header className="sticky top-0 z-30 bg-pk-bg/95 backdrop-blur-md border-b border-pk-border/80 px-3.5 sm:px-6 py-2.5 flex items-center justify-between gap-2.5 shadow-xs">
             <div className="flex items-center gap-2.5 min-w-0">
               {/* Componente de voltar no canto superior esquerdo */}
               <button
                 onClick={handleHeaderBack}
-                className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-pk-card hover:bg-[pk-surface] text-[pk-primary] font-bold text-xs transition-all border border-[pk-border] shadow-xs cursor-pointer active:scale-95 shrink-0"
+                className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-pk-card hover:bg-pk-surface text-pk-primary font-bold text-xs transition-all border border-pk-border shadow-xs cursor-pointer active:scale-95 shrink-0"
                 aria-label="Voltar à tela anterior"
               >
-                <ArrowLeft className="w-4 h-4 text-[pk-primary]" />
+                <ArrowLeft className="w-4 h-4 text-pk-primary" />
                 <span>Voltar</span>
               </button>
 
-              <span className="text-xs sm:text-sm font-extrabold text-[pk-text] tracking-tight truncate">
+              <span className="text-xs sm:text-sm font-extrabold text-pk-text tracking-tight truncate">
                 {getScreenTitle(currentScreen)}
               </span>
             </div>
@@ -312,17 +312,17 @@ export default function App() {
             <div className="flex items-center gap-1.5 shrink-0">
               <button
                 onClick={() => setIsEmergencyModalOpen(true)}
-                className="flex items-center gap-1 px-2 py-1.5 rounded-xl bg-[pk-danger-bg] hover:bg-[pk-danger-border] text-[pk-danger-strong] text-[11px] sm:text-xs font-bold transition-all border border-[pk-danger-border]/60 active:scale-95 cursor-pointer"
+                className="flex items-center gap-1 px-2 py-1.5 rounded-xl bg-pk-danger-bg hover:bg-pk-danger-border text-pk-danger-strong text-[11px] sm:text-xs font-bold transition-all border border-pk-danger-border/60 active:scale-95 cursor-pointer"
                 title="SAMU 192"
               >
-                <PhoneCall className="w-3.5 h-3.5 text-[pk-danger]" />
+                <PhoneCall className="w-3.5 h-3.5 text-pk-danger" />
                 <span className="hidden xs:inline">SOS</span>
                 <span>192</span>
               </button>
 
               <button
                 onClick={() => navigateTo('perfil')}
-                className="w-8 h-8 rounded-full flex items-center justify-center transition-colors text-xs font-bold cursor-pointer bg-[pk-surface] text-[pk-text] hover:bg-[pk-surface]"
+                className="w-8 h-8 rounded-full flex items-center justify-center transition-colors text-xs font-bold cursor-pointer bg-pk-surface text-pk-text hover:bg-pk-surface"
                 aria-label="Meu perfil"
               >
                 <User className="w-3.5 h-3.5" />
@@ -339,39 +339,39 @@ export default function App() {
             <div className="space-y-6 animate-in fade-in duration-200">
               {/* Hero Banner */}
               <div className="space-y-1">
-                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-pk-primary">
                   Cuidado com tranquilidade
                 </span>
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-[pk-text] tracking-tight leading-tight">
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-pk-text tracking-tight leading-tight">
                   Pequenos cuidados,<br />mais segurança. 🌱
                 </h1>
-                <p className="text-xs sm:text-sm text-[pk-muted] font-medium leading-relaxed max-w-md pt-0.5">
+                <p className="text-xs sm:text-sm text-pk-muted font-medium leading-relaxed max-w-md pt-0.5">
                   Informação médica e preventiva clara para cuidar de quem você mais ama — sem alarmismo.
                 </p>
               </div>
 
               {/* Main Interactive Hero Card */}
-              <div className="bg-[pk-accent] rounded-3xl p-5 sm:p-6 relative overflow-hidden shadow-xs border border-[pk-accent]">
+              <div className="bg-pk-accent rounded-3xl p-5 sm:p-6 relative overflow-hidden shadow-xs border border-pk-accent">
                 {/* Decorative background shape */}
-                <div className="absolute -right-8 -bottom-10 w-40 h-40 rounded-full bg-[pk-accent] pointer-events-none" />
+                <div className="absolute -right-8 -bottom-10 w-40 h-40 rounded-full bg-pk-accent pointer-events-none" />
                 <div className="absolute right-4 bottom-3 text-7xl select-none filter drop-shadow-md z-10">
                   🐞
                 </div>
 
                 <div className="relative z-20 max-w-[240px] sm:max-w-xs space-y-2">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-[pk-primary-strong] px-2 py-0.5 rounded-md bg-[pk-accent]">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-pk-primary-strong px-2 py-0.5 rounded-md bg-pk-accent">
                     Seu guia de bolso
                   </span>
-                  <h2 className="text-xl sm:text-2xl font-extrabold text-[pk-text] tracking-tight leading-tight">
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-pk-text tracking-tight leading-tight">
                     Conheça antes de se preocupar.
                   </h2>
-                  <p className="text-xs text-[pk-primary-strong] font-medium leading-relaxed">
+                  <p className="text-xs text-pk-primary-strong font-medium leading-relaxed">
                     Aprenda a reconhecer pequenos animais, evitar acidentes e agir com segurança.
                   </p>
                   <div className="pt-2">
                     <button
                       onClick={() => navigateTo('guia')}
-                      className="px-4 py-2.5 rounded-full bg-[pk-primary] hover:bg-[pk-primary-strong] text-white text-xs font-bold transition-all shadow-md active:scale-95 inline-flex items-center gap-1.5"
+                      className="px-4 py-2.5 rounded-full bg-pk-primary hover:bg-pk-primary-strong text-white text-xs font-bold transition-all shadow-md active:scale-95 inline-flex items-center gap-1.5"
                     >
                       <span>Explorar o guia</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -384,16 +384,16 @@ export default function App() {
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="text-base font-extrabold text-[pk-text]">
+                    <h2 className="text-base font-extrabold text-pk-text">
                       O que você procura?
                     </h2>
-                    <span className="text-[11px] text-[pk-muted]">
+                    <span className="text-[11px] text-pk-muted">
                       Deslize para ver os 8 tópicos essenciais ➔
                     </span>
                   </div>
                   <button
                     onClick={() => navigateTo('guia')}
-                    className="text-xs font-bold text-[pk-primary] hover:underline shrink-0"
+                    className="text-xs font-bold text-pk-primary hover:underline shrink-0"
                   >
                     Ver tudo →
                   </button>
@@ -407,11 +407,11 @@ export default function App() {
                         setActiveCategory('Insetos');
                         navigateTo('guia');
                       }}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
+                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
                     >
                       <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🦋</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-[pk-text]">Insetos</strong>
-                      <span className="text-[11px] text-[pk-muted] truncate block">Abelhas, mosquitos</span>
+                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Insetos</strong>
+                      <span className="text-[11px] text-pk-muted truncate block">Abelhas, mosquitos</span>
                     </button>
 
                     {/* Item 2: Aracnídeos */}
@@ -420,91 +420,91 @@ export default function App() {
                         setActiveCategory('Aracnídeos');
                         navigateTo('guia');
                       }}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
+                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
                     >
                       <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🕷️</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-[pk-text]">Aracnídeos</strong>
-                      <span className="text-[11px] text-[pk-muted] truncate block">Aranhas e escorpiões</span>
+                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Aracnídeos</strong>
+                      <span className="text-[11px] text-pk-muted truncate block">Aranhas e escorpiões</span>
                     </button>
 
                     {/* Item 3: Como agir */}
                     <button
                       onClick={() => navigateTo('orientacoes')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
+                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
                     >
                       <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🩹</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-[pk-text]">Como agir</strong>
-                      <span className="text-[11px] text-[pk-muted] truncate block">Primeiros socorros</span>
+                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Como agir</strong>
+                      <span className="text-[11px] text-pk-muted truncate block">Primeiros socorros</span>
                     </button>
 
                     {/* Item 4: Meus salvos */}
                     <button
                       onClick={() => navigateTo('salvos')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
+                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
                     >
                       <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">♡</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-[pk-text]">Meus salvos</strong>
-                      <span className="text-[11px] text-[pk-muted] truncate block">{savedIds.size} fichas guardadas</span>
+                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Meus salvos</strong>
+                      <span className="text-[11px] text-pk-muted truncate block">{savedIds.size} fichas guardadas</span>
                     </button>
 
                     {/* Item 5: Mito ou Verdade */}
                     <button
                       onClick={() => navigateTo('mitos')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
+                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
                     >
                       <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🧠</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-[pk-text]">Mito ou Verdade</strong>
-                      <span className="text-[11px] text-[pk-muted] truncate block">Fatos que salvam vidas</span>
+                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Mito ou Verdade</strong>
+                      <span className="text-[11px] text-pk-muted truncate block">Fatos que salvam vidas</span>
                     </button>
 
                     {/* Item 6: Ambiente Seguro */}
                     <button
                       onClick={() => navigateTo('checklist')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
+                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
                     >
                       <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🏡</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-[pk-text]">Ambiente Seguro</strong>
-                      <span className="text-[11px] text-[pk-muted] truncate block">Checklist no lar 🌱</span>
+                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Ambiente Seguro</strong>
+                      <span className="text-[11px] text-pk-muted truncate block">Checklist no lar 🌱</span>
                     </button>
 
                     {/* Item 7: Regional e Épocas */}
                     <button
                       onClick={() => navigateTo('regional')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
+                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
                     >
                       <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🌦️</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-[pk-text]">Regional</strong>
-                      <span className="text-[11px] text-[pk-muted] truncate block">Hábitos e épocas</span>
+                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Regional</strong>
+                      <span className="text-[11px] text-pk-muted truncate block">Hábitos e épocas</span>
                     </button>
 
                     {/* Item 8: Fontes Oficiais */}
                     <button
                       onClick={() => navigateTo('fontes')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
+                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
                     >
                       <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">📚</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-[pk-text]">Fontes Oficiais</strong>
-                      <span className="text-[11px] text-[pk-muted] truncate block">Ministério & Fiocruz</span>
+                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Fontes Oficiais</strong>
+                      <span className="text-[11px] text-pk-muted truncate block">Ministério & Fiocruz</span>
                     </button>
                   </div>
                 </div>
               </div>
 
               {/* Emergency Fast Banner with direct action to Mapa */}
-              <div className="bg-gradient-to-br from-[pk-danger-bg] via-[pk-danger-bg] to-[pk-danger-bg] rounded-3xl p-4 sm:p-5 border border-[pk-danger-border] space-y-3.5 shadow-xs">
+              <div className="bg-gradient-to-br from-pk-danger-bg via-pk-danger-bg to-pk-danger-bg rounded-3xl p-4 sm:p-5 border border-pk-danger-border space-y-3.5 shadow-xs">
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-11 h-11 rounded-2xl bg-[pk-danger] text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <div className="w-11 h-11 rounded-2xl bg-pk-danger text-white flex items-center justify-center shrink-0 shadow-xs">
                       <ShieldAlert className="w-6 h-6" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-[pk-danger] block">
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-pk-danger block">
                         Urgência & Referência Oficial
                       </span>
-                      <h3 className="text-sm sm:text-base font-extrabold text-[pk-danger-text]">
+                      <h3 className="text-sm sm:text-base font-extrabold text-pk-danger-text">
                         Picada ou Suspeita de Acidente?
                       </h3>
-                      <p className="text-xs text-[pk-danger-text]">
+                      <p className="text-xs text-pk-danger-text">
                         Encontre hospitais de referência para soro e centros toxicológicos perto de você.
                       </p>
                     </div>
@@ -514,16 +514,16 @@ export default function App() {
                 <div className="grid grid-cols-2 gap-2 pt-0.5">
                   <button
                     onClick={() => navigateTo('mapa')}
-                    className="py-3 px-3 rounded-xl bg-[pk-danger] hover:bg-[pk-danger-strong] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 transition-colors shadow-xs cursor-pointer active:scale-95"
+                    className="py-3 px-3 rounded-xl bg-pk-danger hover:bg-pk-danger-strong text-white text-xs font-extrabold flex items-center justify-center gap-1.5 transition-colors shadow-xs cursor-pointer active:scale-95"
                   >
                     <span>🚨 Atendimento Próximo</span>
                   </button>
 
                   <button
                     onClick={() => setIsEmergencyModalOpen(true)}
-                    className="py-3 px-3 rounded-xl bg-pk-card hover:bg-orange-50 text-[pk-danger-strong] border border-[pk-danger-border] text-xs font-extrabold flex items-center justify-center gap-1.5 transition-colors shadow-xs cursor-pointer active:scale-95"
+                    className="py-3 px-3 rounded-xl bg-pk-card hover:bg-orange-50 text-pk-danger-strong border border-pk-danger-border text-xs font-extrabold flex items-center justify-center gap-1.5 transition-colors shadow-xs cursor-pointer active:scale-95"
                   >
-                    <PhoneCall className="w-3.5 h-3.5 text-[pk-danger]" />
+                    <PhoneCall className="w-3.5 h-3.5 text-pk-danger" />
                     <span>Ligar SAMU 192</span>
                   </button>
                 </div>
@@ -532,12 +532,12 @@ export default function App() {
               {/* Featured Animals List */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-base font-extrabold text-[pk-text]">
+                  <h2 className="text-base font-extrabold text-pk-text">
                     Para começar a conhecer
                   </h2>
                   <button
                     onClick={() => navigateTo('guia')}
-                    className="text-xs font-bold text-[pk-primary] hover:underline"
+                    className="text-xs font-bold text-pk-primary hover:underline"
                   >
                     Ver guia completo →
                   </button>
@@ -548,25 +548,25 @@ export default function App() {
                     <button
                       key={animal.id}
                       onClick={() => openAnimalDetail(animal.id)}
-                      className="w-full text-left p-3.5 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] transition-all flex items-center gap-3 group shadow-xs"
+                      className="w-full text-left p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border transition-all flex items-center gap-3 group shadow-xs"
                     >
-                      <div className="w-14 h-14 rounded-2xl bg-[pk-surface] flex items-center justify-center text-3xl shrink-0 group-hover:scale-105 transition-transform">
+                      <div className="w-14 h-14 rounded-2xl bg-pk-surface flex items-center justify-center text-3xl shrink-0 group-hover:scale-105 transition-transform">
                         {animal.emoji}
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between gap-2">
-                          <strong className="text-sm font-bold text-[pk-text] truncate">
+                          <strong className="text-sm font-bold text-pk-text truncate">
                             {animal.name}
                           </strong>
                           <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 ${
                             animal.isPeconhento
                               ? 'bg-red-50 text-red-700 border border-red-200'
-                              : 'bg-[#f0f4ea] text-[pk-primary]'
+                              : 'bg-[#f0f4ea] text-pk-primary'
                           }`}>
                             {animal.category}
                           </span>
                         </div>
-                        <p className="text-xs text-[pk-muted] truncate mt-0.5">
+                        <p className="text-xs text-pk-muted truncate mt-0.5">
                           {animal.summary}
                         </p>
                       </div>
@@ -587,20 +587,20 @@ export default function App() {
           {currentScreen === 'explorar' && (
             <div className="space-y-5 animate-in fade-in duration-200">
               <div className="space-y-1">
-                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-pk-primary">
                   Descubra com tranquilidade
                 </span>
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-[pk-text] tracking-tight leading-tight">
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-pk-text tracking-tight leading-tight">
                   Explore o mundo<br />dos pequenos animais. 🌿
                 </h1>
-                <p className="text-xs sm:text-sm text-[pk-muted] font-medium leading-relaxed max-w-md pt-0.5">
+                <p className="text-xs sm:text-sm text-pk-muted font-medium leading-relaxed max-w-md pt-0.5">
                   Conhecimento prático para reconhecer, prevenir e saber quando procurar ajuda.
                 </p>
               </div>
 
               {/* Section: Explore por categoria */}
               <div className="space-y-3 pt-2">
-                <h2 className="text-lg font-extrabold text-[pk-text]">
+                <h2 className="text-lg font-extrabold text-pk-text">
                   Explore por categoria
                 </h2>
 
@@ -613,19 +613,19 @@ export default function App() {
                       setSearchQuery('');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[pk-accent] border border-[pk-accent] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-pk-accent border border-pk-accent transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🦋
                     </span>
                     <span className="flex flex-col items-start min-w-0 flex-1">
-                      <b className="text-lg sm:text-xl font-extrabold tracking-tight text-[pk-text]">
+                      <b className="text-lg sm:text-xl font-extrabold tracking-tight text-pk-text">
                         Insetos
                       </b>
                       <small className="text-xs sm:text-sm leading-snug text-[#4e5945] my-1 font-medium">
                         Mosquitos, abelhas, formigas, besouros e lagartas
                       </small>
-                      <span className="text-xs font-extrabold text-[pk-primary] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span className="text-xs font-extrabold text-pk-primary inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Explorar categoria ↗
                       </span>
                     </span>
@@ -639,19 +639,19 @@ export default function App() {
                       setSearchQuery('');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[#f5d9c5] border border-[#ebd0be] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-[#f5d9c5] border border-[#ebd0be] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🕷️
                     </span>
                     <span className="flex flex-col items-start min-w-0 flex-1">
-                      <b className="text-lg sm:text-xl font-extrabold tracking-tight text-[pk-text]">
+                      <b className="text-lg sm:text-xl font-extrabold tracking-tight text-pk-text">
                         Aracnídeos
                       </b>
                       <small className="text-xs sm:text-sm leading-snug text-[#4e5945] my-1 font-medium">
                         Aranhas, escorpiões amarelos e carrapatos
                       </small>
-                      <span className="text-xs font-extrabold text-[pk-primary] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span className="text-xs font-extrabold text-pk-primary inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Explorar categoria ↗
                       </span>
                     </span>
@@ -665,19 +665,19 @@ export default function App() {
                       setSearchQuery('');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[#fef08a] border border-[#fde047] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-[#fef08a] border border-[#fde047] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🐛
                     </span>
                     <span className="flex flex-col items-start min-w-0 flex-1">
-                      <b className="text-lg sm:text-xl font-extrabold tracking-tight text-[pk-text]">
+                      <b className="text-lg sm:text-xl font-extrabold tracking-tight text-pk-text">
                         Miriápodes & Rastejantes
                       </b>
                       <small className="text-xs sm:text-sm leading-snug text-[#4e5945] my-1 font-medium">
                         Lacraias, centopeias e piolhos-de-cobra no chão
                       </small>
-                      <span className="text-xs font-extrabold text-[pk-primary] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span className="text-xs font-extrabold text-pk-primary inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Explorar categoria ↗
                       </span>
                     </span>
@@ -691,24 +691,24 @@ export default function App() {
                       setSearchQuery('');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[pk-danger-border] border border-[pk-danger-border] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-pk-danger-border border border-pk-danger-border transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       ⚠️
                     </span>
                     <span className="flex flex-col items-start min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <b className="text-lg sm:text-xl font-extrabold tracking-tight text-[pk-danger-text]">
+                        <b className="text-lg sm:text-xl font-extrabold tracking-tight text-pk-danger-text">
                           Peçonhentos de Alerta
                         </b>
                         <span className="text-[10px] bg-red-100 text-red-800 font-bold px-2 py-0.5 rounded-full">
                           Soro
                         </span>
                       </div>
-                      <small className="text-xs sm:text-sm leading-snug text-[pk-danger-text] my-1 font-medium">
+                      <small className="text-xs sm:text-sm leading-snug text-pk-danger-text my-1 font-medium">
                         Escorpiões, aranhas-marrons e taturanas com veneno
                       </small>
-                      <span className="text-xs font-extrabold text-[pk-danger-strong] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span className="text-xs font-extrabold text-pk-danger-strong inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Ver animais peçonhentos ↗
                       </span>
                     </span>
@@ -722,7 +722,7 @@ export default function App() {
                       setSearchQuery('mosquito');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[#d1fae5] border border-[#a7f3d0] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-[#d1fae5] border border-[#a7f3d0] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🦟
@@ -748,7 +748,7 @@ export default function App() {
                       setSearchQuery('abelha');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[#e0f2fe] border border-[#bae6fd] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-[#e0f2fe] border border-[#bae6fd] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🐝
@@ -774,7 +774,7 @@ export default function App() {
                       setSearchQuery('taturana');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[#d9f99d] border border-[#bef264] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-[#d9f99d] border border-[#bef264] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🌿
@@ -800,19 +800,19 @@ export default function App() {
                       setSearchQuery('');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[#dfead2] border border-[#d2dfc4] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-[#dfead2] border border-[#d2dfc4] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🍃
                     </span>
                     <span className="flex flex-col items-start min-w-0 flex-1">
-                      <b className="text-lg sm:text-xl font-extrabold tracking-tight text-[pk-text]">
+                      <b className="text-lg sm:text-xl font-extrabold tracking-tight text-pk-text">
                         Outros Animais & Parasitas
                       </b>
                       <small className="text-xs sm:text-sm leading-snug text-[#4e5945] my-1 font-medium">
                         Carrapatos, fauna do solo, quintal e prevenção domiciliar
                       </small>
-                      <span className="text-xs font-extrabold text-[pk-primary] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span className="text-xs font-extrabold text-pk-primary inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Explorar outros ↗
                       </span>
                     </span>
@@ -826,24 +826,24 @@ export default function App() {
                       setSearchQuery('potó');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[pk-danger-bg] border border-[pk-danger-border] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-pk-danger-bg border border-pk-danger-border transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🪲
                     </span>
                     <span className="flex flex-col items-start min-w-0 flex-1">
                       <div className="flex items-center gap-1.5">
-                        <b className="text-lg sm:text-xl font-extrabold tracking-tight text-[pk-danger-text]">
+                        <b className="text-lg sm:text-xl font-extrabold tracking-tight text-pk-danger-text">
                           Besouros & Contato
                         </b>
                         <span className="text-[10px] bg-amber-100 text-amber-900 font-bold px-2 py-0.5 rounded-full">
                           Potó
                         </span>
                       </div>
-                      <small className="text-xs sm:text-sm leading-snug text-[pk-danger-text] my-1 font-medium">
+                      <small className="text-xs sm:text-sm leading-snug text-pk-danger-text my-1 font-medium">
                         Potó (Paederus), secreções cáusticas na pele e luz branca
                       </small>
-                      <span className="text-xs font-extrabold text-[pk-danger-strong] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                      <span className="text-xs font-extrabold text-pk-danger-strong inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                         Explorar besouros cáusticos ↗
                       </span>
                     </span>
@@ -857,7 +857,7 @@ export default function App() {
                       setSearchQuery('formiga');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[#fee2e2] border border-[#fecaca] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-[#fee2e2] border border-[#fecaca] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🐜
@@ -883,7 +883,7 @@ export default function App() {
                       setSearchQuery('carrapato');
                       navigateTo('guia');
                     }}
-                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-[pk-text] bg-[#fef3c7] border border-[#fde68a] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
+                    className="w-full min-h-[140px] rounded-3xl p-4 sm:p-5 flex items-center text-left gap-3.5 sm:gap-4 overflow-hidden text-pk-text bg-[#fef3c7] border border-[#fde68a] transition-all hover:shadow-md hover:scale-[1.01] active:scale-[0.99] group cursor-pointer"
                   >
                     <span className="w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded-2xl bg-white/70 backdrop-blur-xs flex items-center justify-center text-5xl group-hover:scale-105 transition-transform shadow-xs" aria-hidden="true">
                       🪳
@@ -920,37 +920,37 @@ export default function App() {
             <div className="space-y-5 animate-in fade-in duration-200">
               <div className="space-y-1.5">
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
+                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-pk-primary">
                     Biblioteca Educativa
                   </span>
-                  <span className="text-[10px] bg-[pk-accent] text-[pk-text] font-black px-2 py-0.5 rounded-full shadow-xs">
+                  <span className="text-[10px] bg-pk-accent text-pk-text font-black px-2 py-0.5 rounded-full shadow-xs">
                     99 Espécies
                   </span>
                 </div>
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-[pk-text] tracking-tight">
+                <h1 className="text-2xl sm:text-3xl font-extrabold text-pk-text tracking-tight">
                   Guia de Animais & Insetos 🐾
                 </h1>
-                <p className="text-xs text-[pk-muted] leading-relaxed">
+                <p className="text-xs text-pk-muted leading-relaxed">
                   Catálogo completo com 99 espécies brasileiras de importância médica e urbana. Identificação morfológica, risco e primeiros socorros.
                 </p>
               </div>
 
               {/* Search input with live clear */}
               <div className="relative">
-                <div className="flex items-center gap-2.5 bg-pk-card border border-[pk-border] focus-within:border-[pk-primary] rounded-2xl px-4 py-3 shadow-xs transition-colors">
-                  <Search className="w-4 h-4 text-[pk-muted] shrink-0" />
+                <div className="flex items-center gap-2.5 bg-pk-card border border-pk-border focus-within:border-pk-primary rounded-2xl px-4 py-3 shadow-xs transition-colors">
+                  <Search className="w-4 h-4 text-pk-muted shrink-0" />
                   <input
                     type="search"
                     value={searchQuery}
                     onChange={e => setSearchQuery(e.target.value)}
                     placeholder="Buscar espécie por nome popular, científico ou sintomas..."
-                    className="w-full bg-transparent text-sm text-[pk-text] placeholder:text-[#9ea498] outline-none"
+                    className="w-full bg-transparent text-sm text-pk-text placeholder:text-[#9ea498] outline-none"
                     aria-label="Buscar espécie no guia"
                   />
                   {searchQuery && (
                     <button 
                       onClick={() => setSearchQuery('')}
-                      className="p-1 rounded-full text-[pk-muted] hover:text-[pk-text] cursor-pointer"
+                      className="p-1 rounded-full text-pk-muted hover:text-pk-text cursor-pointer"
                       aria-label="Limpar busca"
                     >
                       <X className="w-4 h-4" />
@@ -969,8 +969,8 @@ export default function App() {
                       onClick={() => setActiveCategory(grp.value)}
                       className={`px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
                         activeCategory === grp.value
-                          ? 'bg-[pk-primary] text-white shadow-xs'
-                          : 'bg-pk-card border border-[pk-border] text-[#56604e] hover:bg-[#f1f6ea]'
+                          ? 'bg-pk-primary text-white shadow-xs'
+                          : 'bg-pk-card border border-pk-border text-[#56604e] hover:bg-[#f1f6ea]'
                       }`}
                     >
                       {grp.label}
@@ -980,7 +980,7 @@ export default function App() {
 
                 {/* Risk Level Filter Chips */}
                 <div className="flex gap-1.5 overflow-x-auto no-scrollbar items-center text-xs">
-                  <span className="text-[11px] font-bold text-[pk-muted] mr-1 shrink-0">Risco:</span>
+                  <span className="text-[11px] font-bold text-pk-muted mr-1 shrink-0">Risco:</span>
                   {[
                     { label: 'Todos os riscos', val: 'Todos' },
                     { label: '🔴 Alto', val: 'alto' },
@@ -993,8 +993,8 @@ export default function App() {
                       onClick={() => setActiveRiskFilter(r.val)}
                       className={`px-2.5 py-1 rounded-xl text-[11px] font-bold whitespace-nowrap transition-all cursor-pointer ${
                         activeRiskFilter === r.val
-                          ? 'bg-[pk-text] text-white'
-                          : 'bg-pk-card border border-[pk-border] text-[#60695a] hover:bg-[#edf2e6]'
+                          ? 'bg-pk-text text-white'
+                          : 'bg-pk-card border border-pk-border text-[#60695a] hover:bg-[#edf2e6]'
                       }`}
                     >
                       {r.label}
@@ -1004,8 +1004,8 @@ export default function App() {
 
                 {/* Quick Toggles & Active Results Count */}
                 <div className="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs">
-                  <span className="text-[pk-muted] font-semibold text-[11px]">
-                    Exibindo <strong className="text-[pk-text] font-black">{filteredAnimals.length}</strong> de <strong className="text-[pk-text]">99</strong> espécies catalogadas
+                  <span className="text-pk-muted font-semibold text-[11px]">
+                    Exibindo <strong className="text-pk-text font-black">{filteredAnimals.length}</strong> de <strong className="text-pk-text">99</strong> espécies catalogadas
                   </span>
 
                   <div className="flex items-center gap-1.5">
@@ -1014,7 +1014,7 @@ export default function App() {
                       className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-[11px] font-bold border transition-colors cursor-pointer ${
                         onlyPeconhentos
                           ? 'bg-red-50 text-red-700 border-red-300'
-                          : 'bg-pk-card text-[#636c5c] border-[pk-border]'
+                          : 'bg-pk-card text-[#636c5c] border-pk-border'
                       }`}
                     >
                       <span>⚠️ Peçonhentos</span>
@@ -1025,7 +1025,7 @@ export default function App() {
                       className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-[11px] font-bold border transition-colors cursor-pointer ${
                         onlyVerifiedSources
                           ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
-                          : 'bg-pk-card text-[#636c5c] border-[pk-border]'
+                          : 'bg-pk-card text-[#636c5c] border-pk-border'
                       }`}
                     >
                       <span>🏛️ Fonte Oficial</span>
@@ -1037,10 +1037,10 @@ export default function App() {
               {/* 99 Animals Cards List */}
               <div className="space-y-3">
                 {filteredAnimals.length === 0 ? (
-                  <div className="bg-pk-card rounded-3xl p-8 border border-[pk-border] text-center space-y-3 shadow-xs">
+                  <div className="bg-pk-card rounded-3xl p-8 border border-pk-border text-center space-y-3 shadow-xs">
                     <div className="text-4xl">🔍</div>
-                    <strong className="block text-sm text-[pk-text]">Nenhuma espécie encontrada</strong>
-                    <p className="text-xs text-[pk-muted] max-w-xs mx-auto">
+                    <strong className="block text-sm text-pk-text">Nenhuma espécie encontrada</strong>
+                    <p className="text-xs text-pk-muted max-w-xs mx-auto">
                       Tente pesquisar por outro termo ou limpe os filtros para visualizar todas as 99 espécies.
                     </p>
                     <button
@@ -1051,7 +1051,7 @@ export default function App() {
                         setOnlyPeconhentos(false);
                         setOnlyVerifiedSources(false);
                       }}
-                      className="px-4 py-2 rounded-xl bg-[pk-primary] text-white text-xs font-bold cursor-pointer"
+                      className="px-4 py-2 rounded-xl bg-pk-primary text-white text-xs font-bold cursor-pointer"
                     >
                       Ver todas as 99 espécies
                     </button>
@@ -1082,16 +1082,16 @@ export default function App() {
                     return (
                       <div
                         key={animal.id}
-                        className="p-3.5 sm:p-4 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[#b8c9a5] hover:shadow-md transition-all flex items-start sm:items-center gap-3.5 group cursor-pointer"
+                        className="p-3.5 sm:p-4 bg-pk-card rounded-2xl border border-pk-border hover:border-[#b8c9a5] hover:shadow-md transition-all flex items-start sm:items-center gap-3.5 group cursor-pointer"
                         onClick={() => openAnimalDetail(animal.id)}
                       >
                         {/* Avatar & ID */}
                         <div className="relative shrink-0">
-                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[pk-surface] flex items-center justify-center text-3xl sm:text-4xl group-hover:scale-105 transition-transform">
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-pk-surface flex items-center justify-center text-3xl sm:text-4xl group-hover:scale-105 transition-transform">
                             {animal.emoji}
                           </div>
                           {animal.catalogId && (
-                            <span className="absolute -bottom-1 -right-1 text-[9px] font-black px-1.5 py-0.5 rounded-md bg-[pk-text] text-[pk-accent]">
+                            <span className="absolute -bottom-1 -right-1 text-[9px] font-black px-1.5 py-0.5 rounded-md bg-pk-text text-pk-accent">
                               #{String(animal.catalogId).padStart(2, '0')}
                             </span>
                           )}
@@ -1101,10 +1101,10 @@ export default function App() {
                         <div className="flex-1 min-w-0">
                           <div className="flex items-start justify-between gap-2">
                             <div className="min-w-0">
-                              <h3 className="text-sm sm:text-base font-extrabold text-[pk-text] truncate group-hover:text-[pk-primary] transition-colors">
+                              <h3 className="text-sm sm:text-base font-extrabold text-pk-text truncate group-hover:text-pk-primary transition-colors">
                                 {animal.name}
                               </h3>
-                              <p className="text-[11px] text-[pk-muted] italic truncate">
+                              <p className="text-[11px] text-pk-muted italic truncate">
                                 {animal.scientific}
                               </p>
                             </div>
@@ -1124,7 +1124,7 @@ export default function App() {
                           </div>
 
                           {/* Summary Snippet */}
-                          <p className="text-xs text-[pk-muted] line-clamp-2 mt-1 leading-snug">
+                          <p className="text-xs text-pk-muted line-clamp-2 mt-1 leading-snug">
                             {animal.summary}
                           </p>
 
@@ -1132,7 +1132,7 @@ export default function App() {
                           <div className="flex flex-wrap items-center gap-1.5 mt-2">
                             {/* Group Badge */}
                             {catItem?.grupo && (
-                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#f0f4ea] text-[pk-primary]">
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#f0f4ea] text-pk-primary">
                                 {catItem.grupo}
                               </span>
                             )}
@@ -1165,13 +1165,13 @@ export default function App() {
           {currentScreen === 'orientacoes' && (
             <div className="space-y-6 animate-in fade-in duration-200">
               <div className="space-y-1">
-                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-pk-primary">
                   Informação Prática
                 </span>
-                <h1 className="text-2xl font-extrabold text-[pk-text] tracking-tight">
+                <h1 className="text-2xl font-extrabold text-pk-text tracking-tight">
                   Como Agir com Calma 🩹
                 </h1>
-                <p className="text-xs text-[pk-muted]">
+                <p className="text-xs text-pk-muted">
                   Diretrizes de segurança para pais e cuidadores. Em acidentes, manter a tranquilidade protege a criança.
                 </p>
               </div>
@@ -1190,33 +1190,33 @@ export default function App() {
               </div>
 
               {/* Passo a Passo: Se encontrar um animal */}
-              <div className="bg-pk-card rounded-3xl p-5 border border-[pk-border] space-y-4 shadow-xs">
-                <h2 className="text-base font-extrabold text-[pk-text] flex items-center gap-2">
-                  <span className="w-7 h-7 rounded-xl bg-[pk-surface] text-[pk-primary] flex items-center justify-center text-xs font-bold">1</span>
+              <div className="bg-pk-card rounded-3xl p-5 border border-pk-border space-y-4 shadow-xs">
+                <h2 className="text-base font-extrabold text-pk-text flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-xl bg-pk-surface text-pk-primary flex items-center justify-center text-xs font-bold">1</span>
                   Se encontrar um animal suspeito
                 </h2>
 
                 <div className="space-y-3 text-xs">
-                  <div className="p-3 bg-[pk-bg] rounded-xl border border-[pk-surface] flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-[pk-accent] text-[pk-primary] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">A</span>
+                  <div className="p-3 bg-pk-bg rounded-xl border border-pk-surface flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-pk-accent text-pk-primary font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">A</span>
                     <div>
-                      <strong className="block text-[pk-text] font-bold">Mantenha distância imediata:</strong>
+                      <strong className="block text-pk-text font-bold">Mantenha distância imediata:</strong>
                       Não toque, não esmague e nunca tente capturar o animal com as mãos desprotegidas.
                     </div>
                   </div>
 
-                  <div className="p-3 bg-[pk-bg] rounded-xl border border-[pk-surface] flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-[pk-accent] text-[pk-primary] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">B</span>
+                  <div className="p-3 bg-pk-bg rounded-xl border border-pk-surface flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-pk-accent text-pk-primary font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">B</span>
                     <div>
-                      <strong className="block text-[pk-text] font-bold">Afaste a criança com calma:</strong>
+                      <strong className="block text-pk-text font-bold">Afaste a criança com calma:</strong>
                       Explique à criança que ela deve se afastar sem gritar ou fazer movimentos bruscos.
                     </div>
                   </div>
 
-                  <div className="p-3 bg-[pk-bg] rounded-xl border border-[pk-surface] flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-[pk-accent] text-[pk-primary] font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">C</span>
+                  <div className="p-3 bg-pk-bg rounded-xl border border-pk-surface flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-pk-accent text-pk-primary font-bold text-[11px] flex items-center justify-center shrink-0 mt-0.5">C</span>
                     <div>
-                      <strong className="block text-[pk-text] font-bold">Registre com foto (se for seguro):</strong>
+                      <strong className="block text-pk-text font-bold">Registre com foto (se for seguro):</strong>
                       Fotografar com o celular à distância segura ajuda muito os médicos a identificarem a espécie exata no hospital.
                     </div>
                   </div>
@@ -1224,33 +1224,33 @@ export default function App() {
               </div>
 
               {/* Passo a Passo: Se houver picada */}
-              <div className="bg-pk-card rounded-3xl p-5 border border-[pk-border] space-y-4 shadow-xs">
-                <h2 className="text-base font-extrabold text-[pk-text] flex items-center gap-2">
-                  <span className="w-7 h-7 rounded-xl bg-[pk-surface] text-[pk-primary] flex items-center justify-center text-xs font-bold">2</span>
+              <div className="bg-pk-card rounded-3xl p-5 border border-pk-border space-y-4 shadow-xs">
+                <h2 className="text-base font-extrabold text-pk-text flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-xl bg-pk-surface text-pk-primary flex items-center justify-center text-xs font-bold">2</span>
                   Se houver picada ou ferroada
                 </h2>
 
                 <div className="space-y-3 text-xs">
-                  <div className="p-3 bg-[pk-bg] rounded-xl border border-[pk-surface] flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[pk-primary] shrink-0 mt-0.5" />
+                  <div className="p-3 bg-pk-bg rounded-xl border border-pk-surface flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-pk-primary shrink-0 mt-0.5" />
                     <div>
-                      <strong className="block text-[pk-text] font-bold">Lave o local suavemente:</strong>
+                      <strong className="block text-pk-text font-bold">Lave o local suavemente:</strong>
                       Use apenas água corrente e sabão neutro para evitar infecções bacterianas secundárias.
                     </div>
                   </div>
 
-                  <div className="p-3 bg-[pk-bg] rounded-xl border border-[pk-surface] flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[pk-primary] shrink-0 mt-0.5" />
+                  <div className="p-3 bg-pk-bg rounded-xl border border-pk-surface flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-pk-primary shrink-0 mt-0.5" />
                     <div>
-                      <strong className="block text-[pk-text] font-bold">Mantenha a criança calma e hidratada:</strong>
+                      <strong className="block text-pk-text font-bold">Mantenha a criança calma e hidratada:</strong>
                       O pânico acelera os batimentos e a circulação sanguínea. Acalme a criança no colo.
                     </div>
                   </div>
 
-                  <div className="p-3 bg-[pk-bg] rounded-xl border border-[pk-surface] flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[pk-primary] shrink-0 mt-0.5" />
+                  <div className="p-3 bg-pk-bg rounded-xl border border-pk-surface flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-pk-primary shrink-0 mt-0.5" />
                     <div>
-                      <strong className="block text-[pk-text] font-bold">Procure assistência médica imediata:</strong>
+                      <strong className="block text-pk-text font-bold">Procure assistência médica imediata:</strong>
                       Especialmente em bebês e crianças pequenas, ou se o animal for escorpião, aranha ou lagarta.
                     </div>
                   </div>
@@ -1277,15 +1277,15 @@ export default function App() {
               </div>
 
               {/* Emergência e Hospitais Próximos */}
-              <div className="bg-pk-card rounded-3xl p-5 border border-[pk-border] space-y-3.5 shadow-xs">
+              <div className="bg-pk-card rounded-3xl p-5 border border-pk-border space-y-3.5 shadow-xs">
                 <div className="space-y-1">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-[pk-danger]">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-pk-danger">
                     Canais de Atendimento
                   </span>
-                  <h2 className="text-base font-extrabold text-[pk-text]">
+                  <h2 className="text-base font-extrabold text-pk-text">
                     Onde buscar ajuda em emergências
                   </h2>
-                  <p className="text-xs text-[pk-muted]">
+                  <p className="text-xs text-pk-muted">
                     Em sinais graves ou piora rápida, acione o serviço de emergência ou desloque-se ao hospital mais próximo. Não espere a identificação do animal.
                   </p>
                 </div>
@@ -1293,7 +1293,7 @@ export default function App() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   <button
                     onClick={() => navigateTo('mapa')}
-                    className="p-3.5 rounded-2xl bg-[pk-danger] hover:bg-[pk-danger-strong] text-white text-xs font-extrabold flex items-center justify-between transition-colors shadow-xs cursor-pointer"
+                    className="p-3.5 rounded-2xl bg-pk-danger hover:bg-pk-danger-strong text-white text-xs font-extrabold flex items-center justify-between transition-colors shadow-xs cursor-pointer"
                   >
                     <span className="flex items-center gap-2">
                       <span>🚨</span>
@@ -1304,7 +1304,7 @@ export default function App() {
 
                   <button
                     onClick={() => setIsEmergencyModalOpen(true)}
-                    className="p-3.5 rounded-2xl bg-[pk-primary] hover:bg-[pk-primary-strong] text-white text-xs font-extrabold flex items-center justify-between transition-colors shadow-xs cursor-pointer"
+                    className="p-3.5 rounded-2xl bg-pk-primary hover:bg-pk-primary-strong text-white text-xs font-extrabold flex items-center justify-between transition-colors shadow-xs cursor-pointer"
                   >
                     <span className="flex items-center gap-2">
                       <PhoneCall className="w-4 h-4" />
@@ -1316,23 +1316,23 @@ export default function App() {
               </div>
 
               {/* Fontes institucionais para consultar */}
-              <div className="bg-pk-card rounded-3xl p-5 border border-[pk-border] space-y-2.5 shadow-xs">
-                <h3 className="text-sm font-extrabold text-[pk-text]">Fontes institucionais para consultar</h3>
+              <div className="bg-pk-card rounded-3xl p-5 border border-pk-border space-y-2.5 shadow-xs">
+                <h3 className="text-sm font-extrabold text-pk-text">Fontes institucionais para consultar</h3>
                 <div className="space-y-1.5 text-xs">
                   <div>
-                    <a className="text-[pk-primary] font-bold hover:underline inline-flex items-center gap-1" href="https://www.gov.br/saude/" target="_blank" rel="noopener noreferrer">
+                    <a className="text-pk-primary font-bold hover:underline inline-flex items-center gap-1" href="https://www.gov.br/saude/" target="_blank" rel="noopener noreferrer">
                       <span>Ministério da Saúde</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
                   <div>
-                    <a className="text-[pk-primary] font-bold hover:underline inline-flex items-center gap-1" href="https://portal.fiocruz.br/" target="_blank" rel="noopener noreferrer">
+                    <a className="text-pk-primary font-bold hover:underline inline-flex items-center gap-1" href="https://portal.fiocruz.br/" target="_blank" rel="noopener noreferrer">
                       <span>Fiocruz</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
                   <div>
-                    <a className="text-[pk-primary] font-bold hover:underline inline-flex items-center gap-1" href="https://bvsms.saude.gov.br/" target="_blank" rel="noopener noreferrer">
+                    <a className="text-pk-primary font-bold hover:underline inline-flex items-center gap-1" href="https://bvsms.saude.gov.br/" target="_blank" rel="noopener noreferrer">
                       <span>Biblioteca Virtual em Saúde</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
@@ -1351,27 +1351,27 @@ export default function App() {
           {currentScreen === 'salvos' && (
             <div className="space-y-5 animate-in fade-in duration-200">
               <div className="space-y-1">
-                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-pk-primary">
                   Sua Biblioteca Pessoal
                 </span>
-                <h1 className="text-2xl font-extrabold text-[pk-text] tracking-tight">
+                <h1 className="text-2xl font-extrabold text-pk-text tracking-tight">
                   Meus Salvos ♡
                 </h1>
-                <p className="text-xs text-[pk-muted]">
+                <p className="text-xs text-pk-muted">
                   Fichas guardadas para consulta rápida sem precisar pesquisar novamente.
                 </p>
               </div>
 
               {savedAnimalsList.length === 0 ? (
-                <div className="bg-pk-card rounded-3xl p-8 border border-[pk-border] text-center space-y-3">
+                <div className="bg-pk-card rounded-3xl p-8 border border-pk-border text-center space-y-3">
                   <div className="text-4xl">🌿</div>
-                  <strong className="block text-sm text-[pk-text]">Nenhuma ficha salva ainda</strong>
-                  <p className="text-xs text-[pk-muted] max-w-xs mx-auto">
+                  <strong className="block text-sm text-pk-text">Nenhuma ficha salva ainda</strong>
+                  <p className="text-xs text-pk-muted max-w-xs mx-auto">
                     Abra qualquer animal no guia e toque no ícone de coração para mantê-lo salvo aqui.
                   </p>
                   <button
                     onClick={() => navigateTo('guia')}
-                    className="px-5 py-2.5 rounded-xl bg-[pk-primary] text-white text-xs font-bold hover:bg-[pk-primary-strong] transition-colors"
+                    className="px-5 py-2.5 rounded-xl bg-pk-primary text-white text-xs font-bold hover:bg-pk-primary-strong transition-colors"
                   >
                     Explorar o guia
                   </button>
@@ -1381,16 +1381,16 @@ export default function App() {
                   {savedAnimalsList.map(animal => (
                     <div
                       key={animal.id}
-                      className="p-4 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] transition-all flex items-center gap-3.5 group shadow-xs cursor-pointer"
+                      className="p-4 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border transition-all flex items-center gap-3.5 group shadow-xs cursor-pointer"
                       onClick={() => openAnimalDetail(animal.id)}
                     >
-                      <div className="w-14 h-14 rounded-2xl bg-[pk-surface] flex items-center justify-center text-3xl shrink-0 group-hover:scale-105 transition-transform">
+                      <div className="w-14 h-14 rounded-2xl bg-pk-surface flex items-center justify-center text-3xl shrink-0 group-hover:scale-105 transition-transform">
                         {animal.emoji}
                       </div>
 
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between gap-2">
-                          <strong className="text-sm font-bold text-[pk-text] truncate">
+                          <strong className="text-sm font-bold text-pk-text truncate">
                             {animal.name}
                           </strong>
                           <button
@@ -1404,10 +1404,10 @@ export default function App() {
                             <Heart className="w-4 h-4 fill-rose-500" />
                           </button>
                         </div>
-                        <p className="text-xs text-[pk-muted] truncate mt-0.5">
+                        <p className="text-xs text-pk-muted truncate mt-0.5">
                           {animal.summary}
                         </p>
-                        <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-md bg-[pk-surface] text-[pk-primary] mt-1.5">
+                        <span className="inline-block text-[10px] font-bold px-2 py-0.5 rounded-md bg-pk-surface text-pk-primary mt-1.5">
                           {animal.category}
                         </span>
                       </div>
@@ -1424,32 +1424,32 @@ export default function App() {
           {currentScreen === 'perfil' && (
             <div className="space-y-5 animate-in fade-in duration-200">
               <div className="space-y-1">
-                <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider text-pk-primary">
                   Seu Espaço
                 </span>
-                <h1 className="text-2xl font-extrabold text-[pk-text] tracking-tight">
+                <h1 className="text-2xl font-extrabold text-pk-text tracking-tight">
                   Perfil da Família 🌱
                 </h1>
-                <p className="text-xs text-[pk-muted]">
+                <p className="text-xs text-pk-muted">
                   Preferências, dados e informações sobre o aplicativo.
                 </p>
               </div>
 
               {/* Profile Card */}
-              <div className="p-4 bg-pk-card rounded-3xl border border-[pk-border] flex items-center gap-3.5 shadow-xs">
-                <div className="w-14 h-14 rounded-2xl bg-[pk-accent] flex items-center justify-center text-2xl font-bold text-[pk-primary]">
+              <div className="p-4 bg-pk-card rounded-3xl border border-pk-border flex items-center gap-3.5 shadow-xs">
+                <div className="w-14 h-14 rounded-2xl bg-pk-accent flex items-center justify-center text-2xl font-bold text-pk-primary">
                   🌱
                 </div>
                 <div>
-                  <strong className="block text-base font-bold text-[pk-text]">Família Protege Kids</strong>
-                  <span className="text-xs text-[pk-muted]">Modo Visitante · Dados salvos no dispositivo</span>
+                  <strong className="block text-base font-bold text-pk-text">Família Protege Kids</strong>
+                  <span className="text-xs text-pk-muted">Modo Visitante · Dados salvos no dispositivo</span>
                 </div>
               </div>
 
               {/* Sobre Card */}
-              <div className="p-5 bg-pk-card rounded-3xl border border-[pk-border] space-y-2 shadow-xs">
-                <h2 className="text-sm font-bold text-[pk-text]">Sobre a Iniciativa Protege Kids</h2>
-                <p className="text-xs text-[pk-muted] leading-relaxed">
+              <div className="p-5 bg-pk-card rounded-3xl border border-pk-border space-y-2 shadow-xs">
+                <h2 className="text-sm font-bold text-pk-text">Sobre a Iniciativa Protege Kids</h2>
+                <p className="text-xs text-pk-muted leading-relaxed">
                   Uma experiência educativa desenvolvida para ajudar famílias com bebês e crianças a conhecerem a fauna urbana e silvestre, prevenirem acidentes domésticos e encontrarem fontes e contatos oficiais de saúde pública de forma simples e acolhedora.
                 </p>
               </div>
@@ -1458,15 +1458,15 @@ export default function App() {
               <div className="space-y-2.5">
                 <button
                   onClick={() => navigateTo('orientacoes')}
-                  className="w-full p-4 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all flex items-center justify-between group"
+                  className="w-full p-4 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all flex items-center justify-between group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[pk-surface] text-[pk-primary] flex items-center justify-center text-lg">
+                    <div className="w-10 h-10 rounded-xl bg-pk-surface text-pk-primary flex items-center justify-center text-lg">
                       🩹
                     </div>
                     <div>
-                      <strong className="block text-sm font-bold text-[pk-text]">Orientações Gerais</strong>
-                      <span className="text-xs text-[pk-muted]">O que fazer e condutas seguras</span>
+                      <strong className="block text-sm font-bold text-pk-text">Orientações Gerais</strong>
+                      <span className="text-xs text-pk-muted">O que fazer e condutas seguras</span>
                     </div>
                   </div>
                   <ChevronRight className="w-4 h-4 text-[#8b9481] group-hover:translate-x-1 transition-transform" />
@@ -1474,15 +1474,15 @@ export default function App() {
 
                 <button
                   onClick={() => navigateTo('fontes')}
-                  className="w-full p-4 bg-pk-card rounded-2xl border border-[pk-border] hover:border-[pk-border] text-left transition-all flex items-center justify-between group"
+                  className="w-full p-4 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all flex items-center justify-between group"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[pk-surface] text-[pk-primary] flex items-center justify-center text-lg">
+                    <div className="w-10 h-10 rounded-xl bg-pk-surface text-pk-primary flex items-center justify-center text-lg">
                       📚
                     </div>
                     <div>
-                      <strong className="block text-sm font-bold text-[pk-text]">Fontes Confiáveis</strong>
-                      <span className="text-xs text-[pk-muted]">Ministério da Saúde, Fiocruz e CIATox</span>
+                      <strong className="block text-sm font-bold text-pk-text">Fontes Confiáveis</strong>
+                      <span className="text-xs text-pk-muted">Ministério da Saúde, Fiocruz e CIATox</span>
                     </div>
                   </div>
                   <ChevronRight className="w-4 h-4 text-[#8b9481] group-hover:translate-x-1 transition-transform" />
@@ -1490,7 +1490,7 @@ export default function App() {
               </div>
 
               {/* Privacy and Local Storage Note */}
-              <div className="p-4 bg-[pk-bg] rounded-2xl border border-[pk-border] text-[11px] text-[pk-muted] leading-relaxed">
+              <div className="p-4 bg-pk-bg rounded-2xl border border-pk-border text-[11px] text-pk-muted leading-relaxed">
                 🔒 <strong>Privacidade Garantida:</strong> Este aplicativo não coleta dados pessoais, não possui rastreadores e não envia dados para servidores externos. Suas preferências de checklist e salvos permanecem estritamente no seu navegador.
               </div>
             </div>
@@ -1554,7 +1554,7 @@ export default function App() {
           className={`fixed bottom-0 left-0 right-0 z-40 ${
             currentScreen === 'mapa' 
               ? 'bg-[#0b100c]/95 border-t border-[#1e2c21] text-white shadow-2xl' 
-              : 'bg-white/95 border-t border-[pk-border]'
+              : 'bg-white/95 border-t border-pk-border'
           } backdrop-blur-md pb-[max(12px,env(safe-area-inset-bottom))]`}
           aria-label="Navegação Principal"
         >
@@ -1564,11 +1564,11 @@ export default function App() {
               onClick={() => navigateTo('inicio')}
               className={`flex flex-col items-center justify-center py-1.5 px-0.5 rounded-2xl transition-all cursor-pointer ${
                 currentScreen === 'inicio'
-                  ? 'text-[pk-primary] font-extrabold'
-                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-[pk-text] font-semibold')
+                  ? 'text-pk-primary font-extrabold'
+                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-pk-text font-semibold')
               }`}
             >
-              <div className={`p-1 rounded-xl transition-all ${currentScreen === 'inicio' ? 'bg-[pk-accent] text-[#121a13]' : ''}`}>
+              <div className={`p-1 rounded-xl transition-all ${currentScreen === 'inicio' ? 'bg-pk-accent text-[#121a13]' : ''}`}>
                 <Home className="w-5 h-5" />
               </div>
               <span className="text-[10px] mt-0.5 tracking-tight truncate">Início</span>
@@ -1579,11 +1579,11 @@ export default function App() {
               onClick={() => navigateTo('explorar')}
               className={`flex flex-col items-center justify-center py-1.5 px-0.5 rounded-2xl transition-all cursor-pointer ${
                 currentScreen === 'explorar'
-                  ? 'text-[pk-primary] font-extrabold'
-                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-[pk-text] font-semibold')
+                  ? 'text-pk-primary font-extrabold'
+                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-pk-text font-semibold')
               }`}
             >
-              <div className={`p-1 rounded-xl transition-all ${currentScreen === 'explorar' ? 'bg-[pk-accent] text-[#121a13]' : ''}`}>
+              <div className={`p-1 rounded-xl transition-all ${currentScreen === 'explorar' ? 'bg-pk-accent text-[#121a13]' : ''}`}>
                 <Compass className="w-5 h-5" />
               </div>
               <span className="text-[10px] mt-0.5 tracking-tight truncate">Explorar</span>
@@ -1594,11 +1594,11 @@ export default function App() {
               onClick={() => navigateTo('guia')}
               className={`flex flex-col items-center justify-center py-1.5 px-0.5 rounded-2xl transition-all cursor-pointer ${
                 currentScreen === 'guia' || (currentScreen === 'detalhe' && previousScreen === 'guia')
-                  ? 'text-[pk-primary] font-extrabold'
-                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-[pk-text] font-semibold')
+                  ? 'text-pk-primary font-extrabold'
+                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-pk-text font-semibold')
               }`}
             >
-              <div className={`p-1 rounded-xl transition-all ${(currentScreen === 'guia' || (currentScreen === 'detalhe' && previousScreen === 'guia')) ? 'bg-[pk-accent] text-[#121a13]' : ''}`}>
+              <div className={`p-1 rounded-xl transition-all ${(currentScreen === 'guia' || (currentScreen === 'detalhe' && previousScreen === 'guia')) ? 'bg-pk-accent text-[#121a13]' : ''}`}>
                 <BookOpen className="w-5 h-5" />
               </div>
               <span className="text-[10px] mt-0.5 tracking-tight truncate">Guia</span>
@@ -1609,11 +1609,11 @@ export default function App() {
               onClick={() => navigateTo('orientacoes')}
               className={`flex flex-col items-center justify-center py-1.5 px-0.5 rounded-2xl transition-all cursor-pointer ${
                 currentScreen === 'orientacoes'
-                  ? 'text-[pk-primary] font-extrabold'
-                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-[pk-text] font-semibold')
+                  ? 'text-pk-primary font-extrabold'
+                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-pk-text font-semibold')
               }`}
             >
-              <div className={`p-1 rounded-xl transition-all ${currentScreen === 'orientacoes' ? 'bg-[pk-accent] text-[#121a13]' : ''}`}>
+              <div className={`p-1 rounded-xl transition-all ${currentScreen === 'orientacoes' ? 'bg-pk-accent text-[#121a13]' : ''}`}>
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <span className="text-[10px] mt-0.5 tracking-tight truncate">Como agir</span>
@@ -1624,16 +1624,16 @@ export default function App() {
               onClick={() => navigateTo('salvos')}
               className={`flex flex-col items-center justify-center py-1.5 px-0.5 rounded-2xl transition-all relative cursor-pointer ${
                 currentScreen === 'salvos'
-                  ? 'text-[pk-primary] font-extrabold'
-                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-[pk-text] font-semibold')
+                  ? 'text-pk-primary font-extrabold'
+                  : (currentScreen === 'mapa' ? 'text-[#8e9c89] hover:text-white font-semibold' : 'text-[#8b9284] hover:text-pk-text font-semibold')
               }`}
             >
-              <div className={`p-1 rounded-xl transition-all ${currentScreen === 'salvos' ? 'bg-[pk-accent] text-[#121a13]' : ''}`}>
+              <div className={`p-1 rounded-xl transition-all ${currentScreen === 'salvos' ? 'bg-pk-accent text-[#121a13]' : ''}`}>
                 <Heart className="w-5 h-5" />
               </div>
               <span className="text-[10px] mt-0.5 tracking-tight truncate">Salvos</span>
               {savedIds.size > 0 && (
-                <span className="absolute top-1 right-2 sm:right-3 w-4 h-4 bg-[pk-primary] text-white rounded-full text-[9px] font-extrabold flex items-center justify-center">
+                <span className="absolute top-1 right-2 sm:right-3 w-4 h-4 bg-pk-primary text-white rounded-full text-[9px] font-extrabold flex items-center justify-center">
                   {savedIds.size}
                 </span>
               )}

@@ -19,18 +19,18 @@ export const PremiumModal: React.FC<PremiumModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-0 sm:p-4 animate-in fade-in duration-200">
       <div 
-        className="w-full max-w-lg bg-pk-card rounded-t-3xl sm:rounded-3xl shadow-2xl border border-[pk-border] overflow-hidden max-h-[92vh] flex flex-col"
+        className="w-full max-w-lg bg-pk-card rounded-t-3xl sm:rounded-3xl shadow-2xl border border-pk-border overflow-hidden max-h-[92vh] flex flex-col"
         role="dialog"
         aria-modal="true"
         aria-labelledby="premium-title"
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-[pk-accent] to-[pk-accent] p-5 sm:p-6 flex items-start justify-between border-b border-[#c4dc3c]">
+        <div className="bg-gradient-to-r from-pk-accent to-pk-accent p-5 sm:p-6 flex items-start justify-between border-b border-[#c4dc3c]">
           <div className="space-y-1">
-            <span className="inline-flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary] bg-white/70 px-2.5 py-0.5 rounded-full">
-              <Crown className="w-3.5 h-3.5 text-[pk-primary]" /> Protege Kids Família
+            <span className="inline-flex items-center gap-1 text-[11px] font-extrabold uppercase tracking-wider text-pk-primary bg-white/70 px-2.5 py-0.5 rounded-full">
+              <Crown className="w-3.5 h-3.5 text-pk-primary" /> Protege Kids Família
             </span>
-            <h2 id="premium-title" className="text-xl sm:text-2xl font-extrabold text-[pk-text] tracking-tight">
+            <h2 id="premium-title" className="text-xl sm:text-2xl font-extrabold text-pk-text tracking-tight">
               Prevenção Ampliada & Conveniência 🛡️
             </h2>
             <p className="text-xs text-[#354326] font-medium leading-relaxed">
@@ -39,7 +39,7 @@ export const PremiumModal: React.FC<PremiumModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-white/80 hover:bg-pk-card text-[pk-text] flex items-center justify-center transition-colors cursor-pointer shrink-0"
+            className="w-8 h-8 rounded-full bg-white/80 hover:bg-pk-card text-pk-text flex items-center justify-center transition-colors cursor-pointer shrink-0"
             aria-label="Fechar"
           >
             <X className="w-5 h-5" />
@@ -49,9 +49,9 @@ export const PremiumModal: React.FC<PremiumModalProps> = ({
         {/* Content */}
         <div className="p-5 sm:p-6 overflow-y-auto space-y-5 text-sm">
           {/* Ethical Guarantee Box */}
-          <div className="p-4 bg-[pk-bg] rounded-2xl border border-[#e2ebd6] text-xs text-[#4c5544] space-y-1.5">
-            <div className="font-bold text-[pk-primary] text-xs sm:text-sm flex items-center gap-1.5">
-              <Sparkles className="w-4 h-4 text-[pk-primary]" /> Nosso Compromisso Ético:
+          <div className="p-4 bg-pk-bg rounded-2xl border border-[#e2ebd6] text-xs text-[#4c5544] space-y-1.5">
+            <div className="font-bold text-pk-primary text-xs sm:text-sm flex items-center gap-1.5">
+              <Sparkles className="w-4 h-4 text-pk-primary" /> Nosso Compromisso Ético:
             </div>
             <p className="leading-relaxed">
               O acesso a números de emergência (SAMU 192, CIATox 0800), primeiros socorros imediatos e à lista básica de hospitais públicos é e sempre será <strong>100% gratuito</strong> para toda a sociedade.
@@ -60,59 +60,59 @@ export const PremiumModal: React.FC<PremiumModalProps> = ({
 
           {/* Comparison Table */}
           <div className="space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[pk-muted]">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-pk-muted">
               Comparativo de Recursos
             </h3>
 
-            <div className="border border-[pk-border] rounded-2xl overflow-hidden divide-y divide-[pk-surface] text-xs">
+            <div className="border border-pk-border rounded-2xl overflow-hidden divide-y divide-pk-surface text-xs">
               {/* Row 1 */}
-              <div className="p-3 bg-[pk-card] flex items-center justify-between">
-                <span className="font-semibold text-[pk-text]">Guia educativo e fichas de animais</span>
+              <div className="p-3 bg-pk-card flex items-center justify-between">
+                <span className="font-semibold text-pk-text">Guia educativo e fichas de animais</span>
                 <span className="text-emerald-700 font-bold">Gratuito & Premium</span>
               </div>
               {/* Row 2 */}
               <div className="p-3 flex items-center justify-between">
-                <span className="font-semibold text-[pk-text]">Contatos de emergência (SAMU e CIATox)</span>
+                <span className="font-semibold text-pk-text">Contatos de emergência (SAMU e CIATox)</span>
                 <span className="text-emerald-700 font-bold">Gratuito & Premium</span>
               </div>
               {/* Row 3 */}
-              <div className="p-3 bg-[pk-card] flex items-center justify-between">
-                <span className="font-semibold text-[pk-text]">Consulta de hospitais públicos de referência</span>
+              <div className="p-3 bg-pk-card flex items-center justify-between">
+                <span className="font-semibold text-pk-text">Consulta de hospitais públicos de referência</span>
                 <span className="text-emerald-700 font-bold">Gratuito & Premium</span>
               </div>
               {/* Row 4 (Premium exclusive) */}
               <div className="p-3 flex items-center justify-between bg-amber-50/50">
-                <span className="font-bold text-[pk-text] flex items-center gap-1.5">
+                <span className="font-bold text-pk-text flex items-center gap-1.5">
                   <Heart className="w-3.5 h-3.5 text-rose-500" /> Salvar hospitais favoritos da família
                 </span>
-                <span className="px-2 py-0.5 rounded-md bg-[pk-accent] text-[#2c4717] font-extrabold text-[10px]">
+                <span className="px-2 py-0.5 rounded-md bg-pk-accent text-[#2c4717] font-extrabold text-[10px]">
                   Exclusivo Premium
                 </span>
               </div>
               {/* Row 5 */}
               <div className="p-3 flex items-center justify-between bg-amber-50/50">
-                <span className="font-bold text-[pk-text] flex items-center gap-1.5">
-                  <Navigation className="w-3.5 h-3.5 text-[pk-danger]" /> Traçado rápido de rotas com 1 toque
+                <span className="font-bold text-pk-text flex items-center gap-1.5">
+                  <Navigation className="w-3.5 h-3.5 text-pk-danger" /> Traçado rápido de rotas com 1 toque
                 </span>
-                <span className="px-2 py-0.5 rounded-md bg-[pk-accent] text-[#2c4717] font-extrabold text-[10px]">
+                <span className="px-2 py-0.5 rounded-md bg-pk-accent text-[#2c4717] font-extrabold text-[10px]">
                   Exclusivo Premium
                 </span>
               </div>
               {/* Row 6 */}
               <div className="p-3 flex items-center justify-between bg-amber-50/50">
-                <span className="font-bold text-[pk-text] flex items-center gap-1.5">
+                <span className="font-bold text-pk-text flex items-center gap-1.5">
                   <Bell className="w-3.5 h-3.5 text-amber-600" /> Alertas sazonais de picadas por região
                 </span>
-                <span className="px-2 py-0.5 rounded-md bg-[pk-accent] text-[#2c4717] font-extrabold text-[10px]">
+                <span className="px-2 py-0.5 rounded-md bg-pk-accent text-[#2c4717] font-extrabold text-[10px]">
                   Exclusivo Premium
                 </span>
               </div>
               {/* Row 7 */}
               <div className="p-3 flex items-center justify-between bg-amber-50/50">
-                <span className="font-bold text-[pk-text] flex items-center gap-1.5">
-                  <Download className="w-3.5 h-3.5 text-[pk-primary]" /> Modo offline para viagens e sítios
+                <span className="font-bold text-pk-text flex items-center gap-1.5">
+                  <Download className="w-3.5 h-3.5 text-pk-primary" /> Modo offline para viagens e sítios
                 </span>
-                <span className="px-2 py-0.5 rounded-md bg-[pk-accent] text-[#2c4717] font-extrabold text-[10px]">
+                <span className="px-2 py-0.5 rounded-md bg-pk-accent text-[#2c4717] font-extrabold text-[10px]">
                   Exclusivo Premium
                 </span>
               </div>
@@ -120,11 +120,11 @@ export const PremiumModal: React.FC<PremiumModalProps> = ({
           </div>
 
           {/* Plan simulation card */}
-          <div className="p-4 bg-gradient-to-br from-[pk-bg] to-[pk-surface] rounded-2xl border border-[pk-border] flex items-center justify-between gap-4">
+          <div className="p-4 bg-gradient-to-br from-pk-bg to-pk-surface rounded-2xl border border-pk-border flex items-center justify-between gap-4">
             <div>
-              <span className="text-[10px] font-bold text-[pk-primary] uppercase">Simulação de Demonstração</span>
-              <strong className="block text-sm font-extrabold text-[pk-text]">Status da sua conta:</strong>
-              <span className="text-xs text-[pk-muted]">
+              <span className="text-[10px] font-bold text-pk-primary uppercase">Simulação de Demonstração</span>
+              <strong className="block text-sm font-extrabold text-pk-text">Status da sua conta:</strong>
+              <span className="text-xs text-pk-muted">
                 {isPremiumUser ? '⭐ Plano Premium Ativo (Modo Teste)' : 'Acesso Padrão Gratuito'}
               </span>
             </div>
@@ -136,7 +136,7 @@ export const PremiumModal: React.FC<PremiumModalProps> = ({
               className={`px-4 py-2.5 rounded-xl font-extrabold text-xs transition-all shadow-xs cursor-pointer ${
                 isPremiumUser
                   ? 'bg-slate-200 hover:bg-slate-300 text-slate-800'
-                  : 'bg-[pk-primary] hover:bg-[pk-primary-strong] text-white'
+                  : 'bg-pk-primary hover:bg-pk-primary-strong text-white'
               }`}
             >
               {isPremiumUser ? 'Desativar Premium' : 'Ativar Modo Premium'}

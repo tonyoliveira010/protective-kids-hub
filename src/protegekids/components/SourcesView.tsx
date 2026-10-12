@@ -49,58 +49,58 @@ export const SourcesView: React.FC<SourcesViewProps> = ({ onOpenEmergency }) => 
   return (
     <div className="space-y-5 animate-in fade-in duration-200 pb-12">
       <div>
-        <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
+        <span className="text-[11px] font-extrabold uppercase tracking-wider text-pk-primary">
           Informação Verificável
         </span>
-        <h1 className="text-2xl font-extrabold text-[pk-text] tracking-tight">
+        <h1 className="text-2xl font-extrabold text-pk-text tracking-tight">
           Fontes Oficiais & Referências 📚
         </h1>
-        <p className="text-xs text-[pk-muted] mt-1">
+        <p className="text-xs text-pk-muted mt-1">
           A plataforma Protege Kids foi concebida para aproximar famílias das recomendações da comunidade científica e de saúde pública brasileira.
         </p>
       </div>
 
       {/* Emergency fast card */}
       <div className="bg-[#fff3eb] rounded-3xl p-5 border border-[#ffd5bf] space-y-3">
-        <div className="flex items-center gap-2.5 text-[pk-danger-text] font-bold text-sm">
-          <PhoneCall className="w-5 h-5 text-[pk-danger]" />
+        <div className="flex items-center gap-2.5 text-pk-danger-text font-bold text-sm">
+          <PhoneCall className="w-5 h-5 text-pk-danger" />
           <h3>Centrais de Urgência no Brasil</h3>
         </div>
-        <p className="text-xs text-[pk-danger-text]">
+        <p className="text-xs text-pk-danger-text">
           Em caso de picada com sintomas preocupantes ou dúvida sobre a espécie do animal:
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
           <a
             href="tel:192"
-            className="flex items-center justify-between p-3 bg-pk-card rounded-xl border border-[pk-danger-border] text-xs font-bold text-[pk-danger-strong] hover:bg-orange-50 transition-colors"
+            className="flex items-center justify-between p-3 bg-pk-card rounded-xl border border-pk-danger-border text-xs font-bold text-pk-danger-strong hover:bg-orange-50 transition-colors"
           >
             <span>SAMU (Ambulância 24h)</span>
-            <span className="bg-[pk-danger] text-white px-2 py-0.5 rounded-md">192</span>
+            <span className="bg-pk-danger text-white px-2 py-0.5 rounded-md">192</span>
           </a>
           <a
             href="tel:08007226001"
-            className="flex items-center justify-between p-3 bg-pk-card rounded-xl border border-[pk-danger-border] text-xs font-bold text-[pk-primary] hover:bg-green-50 transition-colors"
+            className="flex items-center justify-between p-3 bg-pk-card rounded-xl border border-pk-danger-border text-xs font-bold text-pk-primary hover:bg-green-50 transition-colors"
           >
             <span>CIATox (Disque-Intoxicação)</span>
-            <span className="bg-[pk-primary] text-white px-2 py-0.5 rounded-md">0800 722 6001</span>
+            <span className="bg-pk-primary text-white px-2 py-0.5 rounded-md">0800 722 6001</span>
           </a>
         </div>
       </div>
 
       {/* Sources list */}
       <div className="space-y-3">
-        <h2 className="text-sm font-bold text-[pk-primary] uppercase tracking-wide">
+        <h2 className="text-sm font-bold text-pk-primary uppercase tracking-wide">
           Portais e Repositórios
         </h2>
 
         {sources.map((item, idx) => (
-          <div key={idx} className="bg-pk-card rounded-2xl p-4 sm:p-5 border border-[pk-border] space-y-2">
+          <div key={idx} className="bg-pk-card rounded-2xl p-4 sm:p-5 border border-pk-border space-y-2">
             <div className="flex items-start justify-between gap-3">
               <div className="space-y-1">
-                <span className="text-[10px] font-bold text-[pk-primary] px-2 py-0.5 bg-[pk-surface] rounded-md inline-block">
+                <span className="text-[10px] font-bold text-pk-primary px-2 py-0.5 bg-pk-surface rounded-md inline-block">
                   {item.tag}
                 </span>
-                <h3 className="text-base font-bold text-[pk-text]">
+                <h3 className="text-base font-bold text-pk-text">
                   {item.title}
                 </h3>
               </div>
@@ -108,14 +108,14 @@ export const SourcesView: React.FC<SourcesViewProps> = ({ onOpenEmergency }) => 
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-xl bg-[pk-bg] border border-[#e2ebd6] text-[pk-primary] hover:bg-[pk-surface] transition-colors shrink-0"
+                className="p-2 rounded-xl bg-pk-bg border border-[#e2ebd6] text-pk-primary hover:bg-pk-surface transition-colors shrink-0"
                 aria-label={`Abrir ${item.title}`}
               >
                 <ExternalLink className="w-4 h-4" />
               </a>
             </div>
 
-            <p className="text-xs text-[pk-muted] leading-relaxed">
+            <p className="text-xs text-pk-muted leading-relaxed">
               {item.desc}
             </p>
 
@@ -124,7 +124,7 @@ export const SourcesView: React.FC<SourcesViewProps> = ({ onOpenEmergency }) => 
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-bold text-[pk-primary] hover:underline inline-flex items-center gap-1"
+                className="text-xs font-bold text-pk-primary hover:underline inline-flex items-center gap-1"
               >
                 <span>Acessar portal oficial</span>
                 <ExternalLink className="w-3 h-3" />
@@ -135,8 +135,8 @@ export const SourcesView: React.FC<SourcesViewProps> = ({ onOpenEmergency }) => 
       </div>
 
       {/* Transparency Note */}
-      <div className="p-4 bg-pk-card rounded-2xl border border-[pk-border] text-xs text-[pk-muted] space-y-1.5">
-        <strong className="block text-[pk-text] font-bold">Nota de Transparência:</strong>
+      <div className="p-4 bg-pk-card rounded-2xl border border-pk-border text-xs text-pk-muted space-y-1.5">
+        <strong className="block text-pk-text font-bold">Nota de Transparência:</strong>
         <p>
           Os links listados direcionam para instituições oficiais governamentais e de pesquisa. O Protege Kids é uma ferramenta complementar de apoio à educação em saúde e não substitui a triagem clínica individual de um médico.
         </p>
