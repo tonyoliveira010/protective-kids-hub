@@ -62,6 +62,58 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Protege Kids — paleta semântica (sem laranja-abóbora / verde-musgo) */
+@theme inline {
+  --color-pk-bg: var(--pk-bg);
+  --color-pk-card: var(--pk-card);
+  --color-pk-surface: var(--pk-surface);
+  --color-pk-border: var(--pk-border);
+  --color-pk-text: var(--pk-text);
+  --color-pk-muted: var(--pk-muted);
+  --color-pk-primary: var(--pk-primary);
+  --color-pk-primary-strong: var(--pk-primary-strong);
+  --color-pk-accent: var(--pk-accent);
+  --color-pk-danger: var(--pk-danger);
+  --color-pk-danger-strong: var(--pk-danger-strong);
+  --color-pk-danger-bg: var(--pk-danger-bg);
+  --color-pk-danger-border: var(--pk-danger-border);
+  --color-pk-danger-text: var(--pk-danger-text);
+}
+
+:root {
+  --pk-bg: oklch(0.985 0.005 180);
+  --pk-card: oklch(1 0 0);
+  --pk-surface: oklch(0.955 0.02 180);
+  --pk-border: oklch(0.905 0.02 180);
+  --pk-text: oklch(0.25 0.02 180);
+  --pk-muted: oklch(0.5 0.02 180);
+  --pk-primary: oklch(0.55 0.1 185);
+  --pk-primary-strong: oklch(0.45 0.09 185);
+  --pk-accent: oklch(0.9 0.16 100);
+  --pk-danger: oklch(0.577 0.215 27);
+  --pk-danger-strong: oklch(0.5 0.2 27);
+  --pk-danger-bg: oklch(0.96 0.02 27);
+  --pk-danger-border: oklch(0.87 0.05 27);
+  --pk-danger-text: oklch(0.45 0.12 27);
+}
+
+.dark {
+  --pk-bg: oklch(0.13 0 0);
+  --pk-card: oklch(0.19 0 0);
+  --pk-surface: oklch(0.24 0.01 180);
+  --pk-border: oklch(0.3 0.01 180);
+  --pk-text: oklch(0.95 0.005 180);
+  --pk-muted: oklch(0.68 0.01 180);
+  --pk-primary: oklch(0.75 0.12 180);
+  --pk-primary-strong: oklch(0.6 0.1 185);
+  --pk-accent: oklch(0.85 0.15 100);
+  --pk-danger: oklch(0.7 0.19 27);
+  --pk-danger-strong: oklch(0.6 0.2 27);
+  --pk-danger-bg: oklch(0.25 0.04 27);
+  --pk-danger-border: oklch(0.4 0.08 27);
+  --pk-danger-text: oklch(0.8 0.1 27);
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
