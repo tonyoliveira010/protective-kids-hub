@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
 import { 
   Search, Heart, ArrowRight, ArrowLeft, ShieldAlert, PhoneCall,
   CheckCircle2, AlertTriangle, BookOpen, User, 
@@ -13,7 +13,10 @@ import { SourcesView } from './components/SourcesView';
 import { RegionalView } from './components/RegionalView';
 import { MythsView } from './components/MythsView';
 import { SafeHomeView } from './components/SafeHomeView';
-import { SecurityMapView } from './components/SecurityMapView';
+// Leaflet é browser-only: carregar o mapa sob demanda evita quebrar o SSR.
+const SecurityMapView = lazy(() =>
+  import('./components/SecurityMapView').then((m) => ({ default: m.SecurityMapView }))
+);
 import { PremiumModal } from './components/PremiumModal';
 
 type Screen = 'inicio' | 'explorar' | 'guia' | 'orientacoes' | 'salvos' | 'perfil' | 'fontes' | 'detalhe' | 'mitos' | 'checklist' | 'regional' | 'mapa';
@@ -1493,6 +1496,7 @@ export default function App() {
 
           {/* SCREEN: MAPA DE SEGURANÇA (HOSPITAIS & CIATOX) */}
           {currentScreen === 'mapa' && (
+            <Suspense fallback={<div className="flex h-full items-center justify-center text-sm text-[#8b9985]">Carregando mapa…</div>}>
             <SecurityMapView 
               onBack={() => navigateTo('inicio')} 
               onOpenPremiumModal={() => setIsPremiumModalOpen(true)}
