@@ -19,7 +19,7 @@ export interface Animal {
   forbidden: string[];
   source: string;
   url: string;
-  imageUrl?: string;
+  imageUrl?: string | undefined;
   imageCaption?: string;
   sizeApprox?: string;
   visualTraits?: string[];
