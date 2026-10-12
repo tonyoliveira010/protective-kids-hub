@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useMemo, lazy, Suspense } from 'react';
-import { 
+import {
   Search, Heart, ArrowRight, ArrowLeft, ShieldAlert, PhoneCall,
-  CheckCircle2, AlertTriangle, BookOpen, User, 
+  CheckCircle2, AlertTriangle, BookOpen, User,
   ExternalLink, ChevronRight, X, Sparkles, Home,
-  FileText, ShieldCheck, HelpCircle, Compass
+  FileText, ShieldCheck, HelpCircle, Compass, Moon, Sun
 } from 'lucide-react';
 import { ANIMALS_DATA, Animal, findAnimalById } from './data/animals';
 import { CATALOG_99_SPECIES, CatalogSpecies } from './data/speciesCatalog';
@@ -55,6 +55,37 @@ export default function App() {
     }
   });
   const [isPremiumModalOpen, setIsPremiumModalOpen] = useState<boolean>(false);
+
+  // Tema claro/escuro (persistido no aparelho)
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    try {
+      const stored = localStorage.getItem('pk-theme');
+      if (stored) return stored === 'dark';
+      return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false;
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDarkMode);
+    try {
+      localStorage.setItem('pk-theme', isDarkMode ? 'dark' : 'light');
+    } catch (e) {
+      console.error(e);
+    }
+  }, [isDarkMode]);
+
+  const themeToggleButton = (size: 'sm' | 'md' = 'md') => (
+    <button
+      onClick={() => setIsDarkMode(prev => !prev)}
+      className={`${size === 'md' ? 'w-9 h-9' : 'w-8 h-8'} rounded-full flex items-center justify-center transition-colors cursor-pointer bg-pk-surface text-pk-text hover:bg-pk-border`}
+      aria-label={isDarkMode ? 'Ativar modo claro' : 'Ativar modo escuro'}
+      title={isDarkMode ? 'Modo claro' : 'Modo escuro'}
+    >
+      {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+    </button>
+  );
 
   const togglePremiumUser = () => {
     setIsPremiumUser(prev => {
