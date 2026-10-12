@@ -1502,6 +1502,7 @@ export default function App() {
               onOpenPremiumModal={() => setIsPremiumModalOpen(true)}
               isPremiumUser={isPremiumUser}
             />
+            </Suspense>
           )}
 
           {/* SCREEN: DETALHE (ANIMAL DETAIL SHEET) */}
