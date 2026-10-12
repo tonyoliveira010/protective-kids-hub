@@ -404,36 +404,6 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
             </button>
           </div>
 
-          {/* Bottom Floating Glance Card when a unit is selected */}
-          {selectedUnit && (
-            <div 
-              onClick={() => setIsDetailModalOpen(true)}
-              className="absolute bottom-3 inset-x-3 sm:inset-x-6 z-[400] bg-[#121913]/95 backdrop-blur-md rounded-2xl p-4 border border-[#28382a] shadow-2xl space-y-2 pointer-events-auto cursor-pointer transition-all hover:border-[#a3e635] group active:scale-[0.99]"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#1d2a1f] text-[#dfff55] border border-[#2b3e2f]">
-                      {selectedUnit.tipoLabel}
-                    </span>
-                    <span className="text-xs font-extrabold text-[#ea580c] tabular-nums">
-                      ~{calculateDistanceKm(userLocation.lat, userLocation.lng, selectedUnit.latitude, selectedUnit.longitude)} km
-                    </span>
-                  </div>
-                  <h3 className="text-sm sm:text-base font-extrabold text-white truncate pt-1 group-hover:text-[#dfff55] transition-colors">
-                    {selectedUnit.nome}
-                  </h3>
-                  <p className="text-xs text-[#8e9c89] truncate">
-                    {selectedUnit.cidade} — {selectedUnit.estado} · Toque para ver detalhes completos
-                  </p>
-                </div>
-
-                <span className="px-3 py-2 rounded-xl bg-[#dfff55] text-[#121a13] text-xs font-black shadow-md shrink-0 flex items-center gap-1 group-hover:scale-105 transition-transform">
-                  Ver Ficha ↗
-                </span>
-              </div>
-            </div>
-          )}
         </div>
       )}
 

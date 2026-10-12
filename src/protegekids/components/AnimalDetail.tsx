@@ -134,10 +134,38 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           </div>
         </div>
 
-        {/* Morphological Identification & Caption */}
+        {/* Título da Ficha + Morphological Identification & Caption */}
         <div className="p-4 sm:p-5 space-y-3 bg-[#fbfdf9]">
+          {/* Título da ficha (abaixo da imagem de capa) */}
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#537d37]">
+              {animal.category} · Ficha Educativa
+            </span>
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#20251d] tracking-tight leading-tight">
+              {animal.name}
+            </h1>
+            <p className="text-xs font-medium text-[#73796d] italic">
+              {animal.scientific}
+            </p>
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold border ${riskBadge.bg}`}>
+                <span className={`w-2 h-2 rounded-full ${riskBadge.dot}`} />
+                <span>{riskBadge.label}</span>
+              </div>
+              {animal.isPeconhento && (
+                <button
+                  onClick={onOpenEmergency}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[#ea580c] hover:underline"
+                >
+                  <PhoneCall className="w-3.5 h-3.5" />
+                  <span>Plantão SAMU 192</span>
+                </button>
+              )}
+            </div>
+          </div>
+
           {animal.imageCaption && (
-            <p className="text-xs text-[#3b4334] font-medium leading-relaxed">
+            <p className="text-xs text-[#3b4334] font-medium leading-relaxed pt-2 border-t border-[#edf1e6]">
               <strong className="text-[#20251d] font-bold">Morfologia de referência: </strong>
               {animal.imageCaption}
             </p>
@@ -170,7 +198,7 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
 
       {/* Modal de Zoom da Imagem */}
       {isImageZoomed && animal.imageUrl && (
-        <div 
+        <div
           className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 animate-in fade-in duration-200"
           onClick={() => setIsImageZoomed(false)}
         >
@@ -181,9 +209,9 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           >
             <X className="w-6 h-6" />
           </button>
-          <img 
-            src={animal.imageUrl} 
-            alt={animal.name} 
+          <img
+            src={animal.imageUrl}
+            alt={animal.name}
             className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
@@ -194,45 +222,6 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           </div>
         </div>
       )}
-
-      {/* Hero Visual Card */}
-      <div className="bg-gradient-to-br from-[#edf4df] via-[#f5f8ee] to-[#e4eed1] rounded-3xl p-6 border border-[#dfe7d2] relative overflow-hidden shadow-xs">
-        <div className="flex items-start justify-between gap-4">
-          <div className="space-y-1.5 z-10 max-w-[280px]">
-            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#537d37]">
-              {animal.category} · Ficha Educativa
-            </span>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#20251d] tracking-tight leading-tight">
-              {animal.name}
-            </h1>
-            <p className="text-xs font-medium text-[#73796d] italic">
-              {animal.scientific}
-            </p>
-          </div>
-
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-white/90 border border-white/60 shadow-md flex items-center justify-center text-5xl sm:text-6xl shrink-0">
-            {animal.emoji}
-          </div>
-        </div>
-
-        {/* Severity Banner */}
-        <div className="mt-4 pt-3 border-t border-[#d8e3c9] flex flex-wrap items-center justify-between gap-2">
-          <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold border ${riskBadge.bg}`}>
-            <span className={`w-2 h-2 rounded-full ${riskBadge.dot}`} />
-            <span>{riskBadge.label}</span>
-          </div>
-
-          {animal.isPeconhento && (
-            <button
-              onClick={onOpenEmergency}
-              className="inline-flex items-center gap-1 text-xs font-bold text-[#ea580c] hover:underline"
-            >
-              <PhoneCall className="w-3.5 h-3.5" />
-              <span>Plantão SAMU 192</span>
-            </button>
-          )}
-        </div>
-      </div>
 
       {/* Summary quote */}
       <div className="p-4 bg-white rounded-2xl border border-[#e8ecdf] text-sm text-[#464c40] font-medium leading-relaxed">
