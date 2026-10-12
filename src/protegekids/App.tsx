@@ -322,9 +322,11 @@ export default function App() {
                 <span>192</span>
               </button>
 
+              {themeToggleButton('sm')}
+
               <button
                 onClick={() => navigateTo('perfil')}
-                className="w-8 h-8 rounded-full flex items-center justify-center transition-colors text-xs font-bold cursor-pointer bg-pk-surface text-pk-text hover:bg-pk-surface"
+                className="w-8 h-8 rounded-full flex items-center justify-center transition-colors text-xs font-bold cursor-pointer bg-pk-surface text-pk-text hover:bg-pk-border"
                 aria-label="Meu perfil"
               >
                 <User className="w-3.5 h-3.5" />
