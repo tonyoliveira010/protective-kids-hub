@@ -37,40 +37,40 @@ export const QuizSection: React.FC = () => {
   const isCompleted = Object.keys(userAnswers).length === total && showExplanation;
 
   return (
-    <div className="bg-white rounded-3xl p-5 sm:p-6 border border-[#e8ecdf] space-y-4 shadow-xs">
+    <div className="bg-pk-card rounded-3xl p-5 sm:p-6 border border-[pk-border] space-y-4 shadow-xs">
       <div className="flex items-start justify-between">
         <div>
-          <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#537d37]">
+          <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
             Jogo Educativo
           </span>
-          <h2 className="text-xl font-extrabold text-[#20251d] tracking-tight">
+          <h2 className="text-xl font-extrabold text-[pk-text] tracking-tight">
             Mito ou Verdade? 🧠
           </h2>
-          <p className="text-xs text-[#73796d]">
+          <p className="text-xs text-[pk-muted]">
             Teste seus conhecimentos e aprenda condutas seguras que salvam vidas.
           </p>
         </div>
-        <div className="text-xs font-bold px-2.5 py-1 rounded-xl bg-[#edf4df] text-[#315321] shrink-0">
+        <div className="text-xs font-bold px-2.5 py-1 rounded-xl bg-[pk-surface] text-[pk-primary] shrink-0">
           Questão {currentIndex + 1}/{total}
         </div>
       </div>
 
       {/* Progress pill */}
-      <div className="w-full h-1.5 bg-[#edf1e6] rounded-full overflow-hidden">
+      <div className="w-full h-1.5 bg-[pk-surface] rounded-full overflow-hidden">
         <div 
-          className="h-full bg-[#537d37] transition-all duration-300" 
+          className="h-full bg-[pk-primary] transition-all duration-300" 
           style={{ width: `${((currentIndex + (isAnswered ? 1 : 0)) / total) * 100}%` }}
         />
       </div>
 
       {/* Question Card */}
-      <div className="p-4 sm:p-5 bg-[#f8faf4] rounded-2xl border border-[#e5ebe0] space-y-3">
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border border-[#dfe5d5] text-[11px] font-bold text-[#55604d]">
-          <HelpCircle className="w-3.5 h-3.5 text-[#537d37]" />
+      <div className="p-4 sm:p-5 bg-[pk-bg] rounded-2xl border border-[#e5ebe0] space-y-3">
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-pk-card border border-[pk-border] text-[11px] font-bold text-[#55604d]">
+          <HelpCircle className="w-3.5 h-3.5 text-[pk-primary]" />
           <span>Tema: {currentQ.badge}</span>
         </div>
 
-        <h3 className="text-base sm:text-lg font-bold text-[#20251d] leading-snug">
+        <h3 className="text-base sm:text-lg font-bold text-[pk-text] leading-snug">
           "{currentQ.question}"
         </h3>
 
@@ -86,7 +86,7 @@ export const QuizSection: React.FC = () => {
                   : userAnswers[currentQ.id] === true
                   ? 'bg-rose-600 text-white'
                   : 'bg-slate-100 text-slate-400 opacity-60'
-                : 'bg-white border-2 border-[#537d37] text-[#315321] hover:bg-[#edf4df] active:scale-95'
+                : 'bg-pk-card border-2 border-[pk-primary] text-[pk-primary] hover:bg-[pk-surface] active:scale-95'
             }`}
           >
             <span>VERDADE</span>
@@ -102,7 +102,7 @@ export const QuizSection: React.FC = () => {
                   : userAnswers[currentQ.id] === false
                   ? 'bg-rose-600 text-white'
                   : 'bg-slate-100 text-slate-400 opacity-60'
-                : 'bg-white border-2 border-rose-500 text-rose-700 hover:bg-rose-50 active:scale-95'
+                : 'bg-pk-card border-2 border-rose-500 text-rose-700 hover:bg-rose-50 active:scale-95'
             }`}
           >
             <span>MITO</span>
@@ -112,7 +112,7 @@ export const QuizSection: React.FC = () => {
 
       {/* Feedback Card */}
       {showExplanation && (
-        <div className="p-4 rounded-2xl border space-y-3 animate-in fade-in duration-200 bg-white">
+        <div className="p-4 rounded-2xl border space-y-3 animate-in fade-in duration-200 bg-pk-card">
           <div className="flex items-center gap-2">
             {userAnswers[currentQ.id] === currentQ.correctAnswer ? (
               <>
@@ -127,7 +127,7 @@ export const QuizSection: React.FC = () => {
             )}
           </div>
 
-          <p className="text-xs sm:text-sm text-[#383f32] leading-relaxed bg-[#f8faf4] p-3 rounded-xl border border-[#edf1e6]">
+          <p className="text-xs sm:text-sm text-[pk-text] leading-relaxed bg-[pk-bg] p-3 rounded-xl border border-[pk-surface]">
             {currentQ.explanation}
           </p>
 
@@ -135,14 +135,14 @@ export const QuizSection: React.FC = () => {
             {currentIndex < total - 1 ? (
               <button
                 onClick={nextQuestion}
-                className="px-4 py-2 rounded-xl bg-[#315321] text-white text-xs font-bold hover:bg-[#243d18] transition-colors"
+                className="px-4 py-2 rounded-xl bg-[pk-primary] text-white text-xs font-bold hover:bg-[pk-primary-strong] transition-colors"
               >
                 Próxima pergunta →
               </button>
             ) : (
               <button
                 onClick={restartQuiz}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#315321] text-white text-xs font-bold hover:bg-[#243d18] transition-colors"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[pk-primary] text-white text-xs font-bold hover:bg-[pk-primary-strong] transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Refazer Quiz (Acertos: {score}/{total})</span>

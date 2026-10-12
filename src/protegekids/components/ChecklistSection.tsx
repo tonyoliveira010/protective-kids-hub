@@ -49,25 +49,25 @@ export const ChecklistSection: React.FC = () => {
   const percentage = Math.round((done / total) * 100);
 
   return (
-    <div className="bg-white rounded-3xl p-5 sm:p-6 border border-[#e8ecdf] space-y-5 shadow-xs">
+    <div className="bg-pk-card rounded-3xl p-5 sm:p-6 border border-[pk-border] space-y-5 shadow-xs">
       {/* Title & Progress Header */}
       <div className="space-y-3">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#537d37]">
+            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
               Ambiente Seguro
             </span>
-            <h2 className="text-xl font-extrabold text-[#20251d] tracking-tight">
+            <h2 className="text-xl font-extrabold text-[pk-text] tracking-tight">
               Checklist de Proteção no Lar 🌱
             </h2>
-            <p className="text-xs text-[#73796d] mt-0.5">
+            <p className="text-xs text-[pk-muted] mt-0.5">
               Hábitos simples que eliminam até 80% das chances de acidentes com animais peçonhentos.
             </p>
           </div>
 
           <button
             onClick={resetChecklist}
-            className="p-2 rounded-xl text-[#8b9284] hover:text-[#20251d] hover:bg-[#edf4df] transition-colors shrink-0"
+            className="p-2 rounded-xl text-[#8b9284] hover:text-[pk-text] hover:bg-[pk-surface] transition-colors shrink-0"
             title="Recomeçar checklist"
             aria-label="Recomeçar checklist"
           >
@@ -77,22 +77,22 @@ export const ChecklistSection: React.FC = () => {
 
         {/* Progress Bar */}
         <div className="bg-[#f2f6eb] rounded-2xl p-3.5 border border-[#e2ebd4] space-y-2">
-          <div className="flex items-center justify-between text-xs font-bold text-[#315321]">
+          <div className="flex items-center justify-between text-xs font-bold text-[pk-primary]">
             <span className="flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-[#537d37]" />
+              <ShieldCheck className="w-4 h-4 text-[pk-primary]" />
               Progresso de Segurança
             </span>
             <span className="tabular-nums font-extrabold">{done} de {total} ({percentage}%)</span>
           </div>
           <div className="w-full h-2.5 bg-[#dbe6cb] rounded-full overflow-hidden">
             <div 
-              className="h-full bg-[#537d37] rounded-full transition-all duration-300"
+              className="h-full bg-[pk-primary] rounded-full transition-all duration-300"
               style={{ width: `${percentage}%` }}
             />
           </div>
           {percentage === 100 && (
             <div className="text-[11px] font-bold text-[#2d521c] flex items-center gap-1 pt-1">
-              <Sparkles className="w-3.5 h-3.5 text-[#d97706]" />
+              <Sparkles className="w-3.5 h-3.5 text-[pk-danger]" />
               Parabéns! Sua casa está super preparada e protegida!
             </div>
           )}
@@ -107,7 +107,7 @@ export const ChecklistSection: React.FC = () => {
             onClick={() => setSelectedRoom(room)}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
               selectedRoom === room
-                ? 'bg-[#315321] text-white shadow-xs'
+                ? 'bg-[pk-primary] text-white shadow-xs'
                 : 'bg-[#f4f7ee] text-[#555e4e] hover:bg-[#ebf0e2]'
             }`}
           >
@@ -127,15 +127,15 @@ export const ChecklistSection: React.FC = () => {
               className={`w-full text-left p-3.5 rounded-2xl border transition-all flex items-start gap-3.5 group ${
                 isDone 
                   ? 'bg-[#f9fbf7] border-[#d7e4c7]' 
-                  : 'bg-white border-[#e8ecdf] hover:border-[#ccd7be]'
+                  : 'bg-pk-card border-[pk-border] hover:border-[pk-border]'
               }`}
             >
               {/* Checkbox circle */}
               <div 
                 className={`w-6 h-6 rounded-xl flex items-center justify-center shrink-0 mt-0.5 transition-all ${
                   isDone 
-                    ? 'bg-[#537d37] text-white shadow-xs' 
-                    : 'border-2 border-[#ccd4c0] group-hover:border-[#537d37]'
+                    ? 'bg-[pk-primary] text-white shadow-xs' 
+                    : 'border-2 border-[#ccd4c0] group-hover:border-[pk-primary]'
                 }`}
               >
                 {isDone && <Check className="w-4 h-4 stroke-[3]" />}
@@ -143,17 +143,17 @@ export const ChecklistSection: React.FC = () => {
 
               <div className="space-y-1 flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-2">
-                  <span className={`text-sm font-bold ${isDone ? 'line-through text-[#73796d]' : 'text-[#20251d]'}`}>
+                  <span className={`text-sm font-bold ${isDone ? 'line-through text-[pk-muted]' : 'text-[pk-text]'}`}>
                     {item.title}
                   </span>
-                  <span className="text-[10px] font-semibold text-[#8b9284] px-2 py-0.5 rounded-md bg-[#edf1e6] shrink-0">
+                  <span className="text-[10px] font-semibold text-[#8b9284] px-2 py-0.5 rounded-md bg-[pk-surface] shrink-0">
                     {item.room}
                   </span>
                 </div>
-                <p className="text-xs text-[#52594a] leading-relaxed">
+                <p className="text-xs text-[pk-muted] leading-relaxed">
                   {item.description}
                 </p>
-                <div className="text-[11px] text-[#537d37] font-semibold pt-0.5">
+                <div className="text-[11px] text-[pk-primary] font-semibold pt-0.5">
                   💡 Dica prática: {item.tip}
                 </div>
               </div>

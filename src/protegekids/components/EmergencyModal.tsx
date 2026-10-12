@@ -12,25 +12,25 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
   return (
     <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-0 sm:p-4 animate-in fade-in duration-200">
       <div 
-        className="w-full max-w-lg bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl border border-[#e8ecdf] overflow-hidden max-h-[92vh] flex flex-col"
+        className="w-full max-w-lg bg-pk-card rounded-t-3xl sm:rounded-3xl shadow-2xl border border-[pk-border] overflow-hidden max-h-[92vh] flex flex-col"
         role="dialog"
         aria-modal="true"
         aria-labelledby="emergency-title"
       >
         {/* Header */}
-        <div className="bg-[#fff2e8] border-b border-[#ffe2cf] p-5 flex items-center justify-between">
+        <div className="bg-[pk-danger-bg] border-b border-[pk-danger-border] p-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#ea580c] text-white flex items-center justify-center font-bold">
+            <div className="w-10 h-10 rounded-2xl bg-[pk-danger] text-white flex items-center justify-center font-bold">
               <ShieldAlert className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#ea580c]">Atendimento de Urgência</span>
-              <h2 id="emergency-title" className="text-lg font-bold text-[#431407]">Canais Oficiais Imediatos</h2>
+              <span className="text-xs font-bold uppercase tracking-wider text-[pk-danger]">Atendimento de Urgência</span>
+              <h2 id="emergency-title" className="text-lg font-bold text-[pk-danger-text]">Canais Oficiais Imediatos</h2>
             </div>
           </div>
           <button 
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#431407] flex items-center justify-center transition-colors"
+            className="w-9 h-9 rounded-full bg-white/80 hover:bg-pk-card text-[pk-danger-text] flex items-center justify-center transition-colors"
             aria-label="Fechar"
           >
             <X className="w-5 h-5" />
@@ -48,12 +48,12 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#73796d]">Ligue gratuitamente (Brasil)</h3>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[pk-muted]">Ligue gratuitamente (Brasil)</h3>
 
             {/* SAMU 192 */}
             <a 
               href="tel:192" 
-              className="flex items-center justify-between p-4 bg-[#ea580c] hover:bg-[#c2410c] text-white rounded-2xl transition-all shadow-md group"
+              className="flex items-center justify-between p-4 bg-[pk-danger] hover:bg-[pk-danger-strong] text-white rounded-2xl transition-all shadow-md group"
             >
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-white">
@@ -71,7 +71,7 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
             {/* CIATox Anvisa */}
             <a 
               href="tel:08007226001" 
-              className="flex items-center justify-between p-4 bg-[#315321] hover:bg-[#243d18] text-white rounded-2xl transition-all shadow-md group"
+              className="flex items-center justify-between p-4 bg-[pk-primary] hover:bg-[pk-primary-strong] text-white rounded-2xl transition-all shadow-md group"
             >
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-white">
@@ -92,7 +92,7 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
               className="flex items-center justify-between p-3.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-2xl transition-all"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-slate-700">
+                <div className="w-10 h-10 rounded-xl bg-pk-card flex items-center justify-center text-slate-700">
                   <PhoneCall className="w-5 h-5" />
                 </div>
                 <div>
@@ -105,8 +105,8 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
           </div>
 
           {/* O que informar na ligação */}
-          <div className="p-4 bg-[#f8faf4] border border-[#e8ecdf] rounded-2xl space-y-2 text-xs text-[#52594a]">
-            <div className="font-bold text-[#315321] text-sm flex items-center gap-1.5">
+          <div className="p-4 bg-[pk-bg] border border-[pk-border] rounded-2xl space-y-2 text-xs text-[pk-muted]">
+            <div className="font-bold text-[pk-primary] text-sm flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4" /> Ao falar com o médico regulador:
             </div>
             <ul className="list-disc pl-4 space-y-1">

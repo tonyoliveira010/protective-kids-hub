@@ -62,7 +62,7 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
       <div className="flex items-center justify-between">
         <button
           onClick={onBack}
-          className="flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-white border border-[#e8ecdf] text-[#315321] font-bold text-xs hover:bg-[#edf4df] transition-colors shadow-xs"
+          className="flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-pk-card border border-[pk-border] text-[pk-primary] font-bold text-xs hover:bg-[pk-surface] transition-colors shadow-xs"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Voltar ao Guia</span>
@@ -73,7 +73,7 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           className={`flex items-center gap-1.5 px-3.5 py-2 rounded-2xl border text-xs font-bold transition-all shadow-xs ${
             isSaved
               ? 'bg-rose-50 border-rose-200 text-rose-600'
-              : 'bg-white border-[#e8ecdf] text-[#73796d] hover:text-[#20251d]'
+              : 'bg-pk-card border-[pk-border] text-[pk-muted] hover:text-[pk-text]'
           }`}
           aria-label={isSaved ? 'Remover dos salvos' : 'Salvar nos favoritos'}
         >
@@ -83,7 +83,7 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
       </div>
 
       {/* Card de Imagem do Animal / Inseto (Identificação Visual) */}
-      <div className="bg-white rounded-3xl overflow-hidden border border-[#d8e3c9] shadow-sm space-y-0">
+      <div className="bg-pk-card rounded-3xl overflow-hidden border border-[pk-border] shadow-sm space-y-0">
         {/* Photo Container with Macro View */}
         <div className="relative w-full bg-[#1b2216] overflow-hidden group">
           {animal.imageUrl ? (
@@ -98,21 +98,21 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
               }}
             />
           ) : (
-            <div className="w-full h-48 bg-gradient-to-br from-[#253f19] to-[#14230d] flex flex-col items-center justify-center text-white">
+            <div className="w-full h-48 bg-gradient-to-br from-[pk-primary-strong] to-[pk-primary-strong] flex flex-col items-center justify-center text-white">
               <span className="text-6xl mb-2">{animal.emoji}</span>
-              <span className="text-xs font-semibold text-[#dfff55]">Ilustração Científica</span>
+              <span className="text-xs font-semibold text-[pk-accent]">Ilustração Científica</span>
             </div>
           )}
 
           {/* Floating Badges */}
           <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-extrabold border border-white/20">
-            <Camera className="w-3.5 h-3.5 text-[#dfff55]" />
+            <Camera className="w-3.5 h-3.5 text-[pk-accent]" />
             <span>Foto de Identificação</span>
           </div>
 
           {animal.sizeApprox && (
             <div className="absolute top-3 right-3 z-10 flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md text-white text-[10px] font-bold border border-white/20">
-              <Ruler className="w-3 h-3 text-[#dfff55]" />
+              <Ruler className="w-3 h-3 text-[pk-accent]" />
               <span>{animal.sizeApprox}</span>
             </div>
           )}
@@ -124,7 +124,7 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
               className="absolute bottom-3 right-3 z-10 p-2 rounded-xl bg-black/60 hover:bg-black/80 backdrop-blur-md text-white transition-all border border-white/20 cursor-pointer flex items-center gap-1.5 text-xs font-bold"
               title="Ampliar foto em tela cheia"
             >
-              <ZoomIn className="w-3.5 h-3.5 text-[#dfff55]" />
+              <ZoomIn className="w-3.5 h-3.5 text-[pk-accent]" />
               <span className="text-[11px]">Ampliar</span>
             </button>
           )}
@@ -135,16 +135,16 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
         </div>
 
         {/* Título da Ficha + Morphological Identification & Caption */}
-        <div className="p-4 sm:p-5 space-y-3 bg-[#fbfdf9]">
+        <div className="p-4 sm:p-5 space-y-3 bg-[pk-card]">
           {/* Título da ficha (abaixo da imagem de capa) */}
           <div className="space-y-1.5">
-            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#537d37]">
+            <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary]">
               {animal.category} · Ficha Educativa
             </span>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#20251d] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-[pk-text] tracking-tight leading-tight">
               {animal.name}
             </h1>
-            <p className="text-xs font-medium text-[#73796d] italic">
+            <p className="text-xs font-medium text-[pk-muted] italic">
               {animal.scientific}
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-1">
@@ -155,7 +155,7 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
               {animal.isPeconhento && (
                 <button
                   onClick={onOpenEmergency}
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[#ea580c] hover:underline"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[pk-danger] hover:underline"
                 >
                   <PhoneCall className="w-3.5 h-3.5" />
                   <span>Plantão SAMU 192</span>
@@ -165,22 +165,22 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           </div>
 
           {animal.imageCaption && (
-            <p className="text-xs text-[#3b4334] font-medium leading-relaxed pt-2 border-t border-[#edf1e6]">
-              <strong className="text-[#20251d] font-bold">Morfologia de referência: </strong>
+            <p className="text-xs text-[pk-text] font-medium leading-relaxed pt-2 border-t border-[pk-surface]">
+              <strong className="text-[pk-text] font-bold">Morfologia de referência: </strong>
               {animal.imageCaption}
             </p>
           )}
 
           {/* Visual Traits Checklist */}
           {animal.visualTraits && animal.visualTraits.length > 0 && (
-            <div className="space-y-1.5 pt-1 border-t border-[#edf1e6]">
-              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#537d37] block">
+            <div className="space-y-1.5 pt-1 border-t border-[pk-surface]">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[pk-primary] block">
                 Como reconhecer visualmente:
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                 {animal.visualTraits.map((trait, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-xs text-[#464f3f] bg-white p-2 rounded-xl border border-[#e8ecdf]">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#537d37] shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-start gap-2 text-xs text-[pk-text] bg-pk-card p-2 rounded-xl border border-[pk-border]">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[pk-primary] shrink-0 mt-0.5" />
                     <span>{trait}</span>
                   </div>
                 ))}
@@ -189,8 +189,8 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           )}
 
           {/* Photo Tip for Caregivers */}
-          <div className="p-2.5 rounded-xl bg-[#edf4df] text-[11px] text-[#315321] font-semibold flex items-center gap-2">
-            <Eye className="w-3.5 h-3.5 text-[#537d37] shrink-0" />
+          <div className="p-2.5 rounded-xl bg-[pk-surface] text-[11px] text-[pk-primary] font-semibold flex items-center gap-2">
+            <Eye className="w-3.5 h-3.5 text-[pk-primary] shrink-0" />
             <span>Não capture o animal com as mãos desprotegidas. Fotografe à distância para identificação médica no hospital.</span>
           </div>
         </div>
@@ -224,13 +224,13 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
       )}
 
       {/* Summary quote */}
-      <div className="p-4 bg-white rounded-2xl border border-[#e8ecdf] text-sm text-[#464c40] font-medium leading-relaxed">
+      <div className="p-4 bg-pk-card rounded-2xl border border-[pk-border] text-sm text-[pk-text] font-medium leading-relaxed">
         {animal.summary}
       </div>
 
       {/* Critical Medical Disclaimer */}
-      <div className="p-4 bg-[#fff9ed] rounded-2xl border border-[#ffe4ad] text-xs text-[#8a5b14] flex gap-3">
-        <Info className="w-5 h-5 text-[#d97706] shrink-0 mt-0.5" />
+      <div className="p-4 bg-[pk-danger-bg] rounded-2xl border border-[pk-danger-border] text-xs text-[pk-danger-text] flex gap-3">
+        <Info className="w-5 h-5 text-[pk-danger] shrink-0 mt-0.5" />
         <div className="space-y-1">
           <strong className="block font-bold">Ficha demonstrativa e educativa:</strong>
           <span>
@@ -240,13 +240,13 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
       </div>
 
       {/* Tab Navigation */}
-      <div className="flex gap-1.5 p-1 bg-[#edf1e6] rounded-2xl text-xs font-bold overflow-x-auto no-scrollbar">
+      <div className="flex gap-1.5 p-1 bg-[pk-surface] rounded-2xl text-xs font-bold overflow-x-auto no-scrollbar">
         <button
           onClick={() => setActiveTab('socorros')}
           className={`px-3.5 py-2 rounded-xl whitespace-nowrap transition-all ${
             activeTab === 'socorros'
-              ? 'bg-[#315321] text-white shadow-xs'
-              : 'text-[#626a5b] hover:text-[#20251d]'
+              ? 'bg-[pk-primary] text-white shadow-xs'
+              : 'text-[pk-muted] hover:text-[pk-text]'
           }`}
         >
           Primeiros Socorros
@@ -255,8 +255,8 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           onClick={() => setActiveTab('risco')}
           className={`px-3.5 py-2 rounded-xl whitespace-nowrap transition-all ${
             activeTab === 'risco'
-              ? 'bg-[#315321] text-white shadow-xs'
-              : 'text-[#626a5b] hover:text-[#20251d]'
+              ? 'bg-[pk-primary] text-white shadow-xs'
+              : 'text-[pk-muted] hover:text-[pk-text]'
           }`}
         >
           Sintomas & Riscos
@@ -265,8 +265,8 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           onClick={() => setActiveTab('prevencao')}
           className={`px-3.5 py-2 rounded-xl whitespace-nowrap transition-all ${
             activeTab === 'prevencao'
-              ? 'bg-[#315321] text-white shadow-xs'
-              : 'text-[#626a5b] hover:text-[#20251d]'
+              ? 'bg-[pk-primary] text-white shadow-xs'
+              : 'text-[pk-muted] hover:text-[pk-text]'
           }`}
         >
           Prevenção no Lar
@@ -275,8 +275,8 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           onClick={() => setActiveTab('fontes')}
           className={`px-3.5 py-2 rounded-xl whitespace-nowrap transition-all ${
             activeTab === 'fontes'
-              ? 'bg-[#315321] text-white shadow-xs'
-              : 'text-[#626a5b] hover:text-[#20251d]'
+              ? 'bg-[pk-primary] text-white shadow-xs'
+              : 'text-[pk-muted] hover:text-[pk-text]'
           }`}
         >
           Fontes
@@ -287,12 +287,12 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
       {activeTab === 'socorros' && (
         <div className="space-y-4 animate-in fade-in duration-150">
           {/* O que fazer */}
-          <div className="bg-white rounded-2xl p-5 border border-[#e8ecdf] space-y-3">
-            <div className="flex items-center gap-2 text-[#315321] font-bold text-sm">
-              <CheckCircle2 className="w-5 h-5 text-[#537d37]" />
+          <div className="bg-pk-card rounded-2xl p-5 border border-[pk-border] space-y-3">
+            <div className="flex items-center gap-2 text-[pk-primary] font-bold text-sm">
+              <CheckCircle2 className="w-5 h-5 text-[pk-primary]" />
               <h3>O que fazer imediatamente</h3>
             </div>
-            <p className="text-sm text-[#383f32] leading-relaxed">
+            <p className="text-sm text-[pk-text] leading-relaxed">
               {animal.action}
             </p>
           </div>
@@ -314,14 +314,14 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           </div>
 
           {/* Quick Call SAMU */}
-          <div className="p-4 bg-[#f8faf4] rounded-2xl border border-[#dfe5d5] flex items-center justify-between">
+          <div className="p-4 bg-[pk-bg] rounded-2xl border border-[pk-border] flex items-center justify-between">
             <div>
-              <div className="text-xs font-bold text-[#20251d]">Dúvida na gravidade da criança?</div>
-              <div className="text-xs text-[#73796d]">Atendimento gratuito 24 horas</div>
+              <div className="text-xs font-bold text-[pk-text]">Dúvida na gravidade da criança?</div>
+              <div className="text-xs text-[pk-muted]">Atendimento gratuito 24 horas</div>
             </div>
             <button
               onClick={onOpenEmergency}
-              className="px-4 py-2 bg-[#ea580c] hover:bg-[#c2410c] text-white text-xs font-bold rounded-xl transition-colors shadow-xs"
+              className="px-4 py-2 bg-[pk-danger] hover:bg-[pk-danger-strong] text-white text-xs font-bold rounded-xl transition-colors shadow-xs"
             >
               Ligue 192 (SAMU)
             </button>
@@ -332,34 +332,34 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
       {activeTab === 'risco' && (
         <div className="space-y-4 animate-in fade-in duration-150">
           {/* Risco em resumo */}
-          <div className="bg-white rounded-2xl p-5 border border-[#e8ecdf] space-y-2.5">
-            <div className="flex items-center gap-2 text-[#315321] font-bold text-sm">
-              <Activity className="w-5 h-5 text-[#537d37]" />
+          <div className="bg-pk-card rounded-2xl p-5 border border-[pk-border] space-y-2.5">
+            <div className="flex items-center gap-2 text-[pk-primary] font-bold text-sm">
+              <Activity className="w-5 h-5 text-[pk-primary]" />
               <h3>Risco em resumo</h3>
             </div>
-            <p className="text-sm text-[#464c40] leading-relaxed">
+            <p className="text-sm text-[pk-text] leading-relaxed">
               {animal.risk}
             </p>
           </div>
 
           {/* Onde pode aparecer */}
-          <div className="bg-white rounded-2xl p-5 border border-[#e8ecdf] space-y-2.5">
-            <div className="flex items-center gap-2 text-[#315321] font-bold text-sm">
-              <MapPin className="w-5 h-5 text-[#537d37]" />
+          <div className="bg-pk-card rounded-2xl p-5 border border-[pk-border] space-y-2.5">
+            <div className="flex items-center gap-2 text-[pk-primary] font-bold text-sm">
+              <MapPin className="w-5 h-5 text-[pk-primary]" />
               <h3>Onde pode aparecer</h3>
             </div>
-            <p className="text-sm text-[#464c40] leading-relaxed">
+            <p className="text-sm text-[pk-text] leading-relaxed">
               {animal.where}
             </p>
           </div>
 
           {/* Possíveis reações */}
-          <div className="bg-white rounded-2xl p-5 border border-[#e8ecdf] space-y-2.5">
-            <div className="flex items-center gap-2 text-[#315321] font-bold text-sm">
-              <AlertTriangle className="w-5 h-5 text-[#537d37]" />
+          <div className="bg-pk-card rounded-2xl p-5 border border-[pk-border] space-y-2.5">
+            <div className="flex items-center gap-2 text-[pk-primary] font-bold text-sm">
+              <AlertTriangle className="w-5 h-5 text-[pk-primary]" />
               <h3>Possíveis reações</h3>
             </div>
-            <p className="text-sm text-[#464c40] leading-relaxed">
+            <p className="text-sm text-[pk-text] leading-relaxed">
               {animal.symptoms}
             </p>
           </div>
@@ -367,7 +367,7 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
           {/* Sinais de Alarme Vermelho */}
           <div className="bg-[#fff9f0] rounded-2xl p-5 border border-[#fedbb3] space-y-3">
             <div className="flex items-center gap-2 text-[#9a4b08] font-bold text-sm">
-              <AlertTriangle className="w-5 h-5 text-[#ea580c]" />
+              <AlertTriangle className="w-5 h-5 text-[pk-danger]" />
               <h3>Sinais de Alerta de Emergência</h3>
             </div>
             <p className="text-xs text-[#6e390d]">
@@ -376,7 +376,7 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
             <ul className="space-y-2 text-xs font-medium text-[#7a4011]">
               {animal.alarmSignals.map((signal, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#ea580c] mt-1 shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-[pk-danger] mt-1 shrink-0" />
                   <span>{signal}</span>
                 </li>
               ))}
@@ -386,21 +386,21 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
       )}
 
       {activeTab === 'prevencao' && (
-        <div className="bg-white rounded-2xl p-5 border border-[#e8ecdf] space-y-4 animate-in fade-in duration-150">
-          <div className="flex items-center gap-2 text-[#315321] font-bold text-sm">
-            <ShieldCheck className="w-5 h-5 text-[#537d37]" />
+        <div className="bg-pk-card rounded-2xl p-5 border border-[pk-border] space-y-4 animate-in fade-in duration-150">
+          <div className="flex items-center gap-2 text-[pk-primary] font-bold text-sm">
+            <ShieldCheck className="w-5 h-5 text-[pk-primary]" />
             <h3>Como prevenir</h3>
           </div>
-          <p className="text-xs text-[#73796d]">
+          <p className="text-xs text-[pk-muted]">
             Medidas práticas no ambiente familiar para evitar contato e acidentes.
           </p>
           <div className="space-y-3">
             {animal.prevention.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3 p-3 bg-[#f8faf4] rounded-xl border border-[#edf1e6]">
-                <span className="w-6 h-6 rounded-lg bg-[#dfff55] text-[#315321] font-extrabold text-xs flex items-center justify-center shrink-0">
+              <div key={idx} className="flex items-start gap-3 p-3 bg-[pk-bg] rounded-xl border border-[pk-surface]">
+                <span className="w-6 h-6 rounded-lg bg-[pk-accent] text-[pk-primary] font-extrabold text-xs flex items-center justify-center shrink-0">
                   {idx + 1}
                 </span>
-                <span className="text-xs text-[#383f32] font-medium leading-relaxed">{item}</span>
+                <span className="text-xs text-[pk-text] font-medium leading-relaxed">{item}</span>
               </div>
             ))}
           </div>
@@ -408,22 +408,22 @@ export const AnimalDetail: React.FC<AnimalDetailProps> = ({
       )}
 
       {activeTab === 'fontes' && (
-        <div className="bg-white rounded-2xl p-5 border border-[#e8ecdf] space-y-4 animate-in fade-in duration-150">
-          <div className="flex items-center gap-2 text-[#315321] font-bold text-sm">
-            <Stethoscope className="w-5 h-5 text-[#537d37]" />
+        <div className="bg-pk-card rounded-2xl p-5 border border-[pk-border] space-y-4 animate-in fade-in duration-150">
+          <div className="flex items-center gap-2 text-[pk-primary] font-bold text-sm">
+            <Stethoscope className="w-5 h-5 text-[pk-primary]" />
             <h3>Referência Institucional</h3>
           </div>
-          <p className="text-xs text-[#52594a]">
+          <p className="text-xs text-[pk-muted]">
             {animal.source}
           </p>
-          <div className="p-3 bg-[#f8faf4] rounded-xl border border-[#e8ecdf] text-xs text-[#73796d]">
+          <div className="p-3 bg-[pk-bg] rounded-xl border border-[pk-border] text-xs text-[pk-muted]">
             Esta referência aponta para o repositório institucional de saúde pública brasileiro. Para protocolos hospitalares específicos ou confirmação diagnóstica, consulte a equipe médica local.
           </div>
           <a
             href={animal.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#315321] hover:bg-[#243d18] text-white text-xs font-bold transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[pk-primary] hover:bg-[pk-primary-strong] text-white text-xs font-bold transition-colors"
           >
             <span>Consultar portal de saúde oficial</span>
             <ExternalLink className="w-3.5 h-3.5" />
