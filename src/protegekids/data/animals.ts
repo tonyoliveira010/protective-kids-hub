@@ -20,10 +20,10 @@ export interface Animal {
   source: string;
   url: string;
   imageUrl?: string | undefined;
-  imageCaption?: string;
-  sizeApprox?: string;
-  visualTraits?: string[];
-  catalogId?: number;
+  imageCaption?: string | undefined;
+  sizeApprox?: string | undefined;
+  visualTraits?: string[] | undefined;
+  catalogId?: number | undefined;
 }
 
 // 99 Catalog Species integrated
