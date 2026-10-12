@@ -36,7 +36,7 @@ export const SecurityMapView: React.FC<SecurityMapViewProps> = ({
   const [activeFilter, setActiveFilter] = useState<'todos' | 'hospitais' | 'ciatox' | 'soro'>('todos');
 
   // Selected Unit for bottom card drawer and Detail Modal
-  const [selectedUnit, setSelectedUnit] = useState<HealthUnit | null>(HEALTH_UNITS[0]);
+  const [selectedUnit, setSelectedUnit] = useState<HealthUnit | null>(HEALTH_UNITS[0] ?? null);
   const [isDetailModalOpen, setIsDetailModalOpen] = useState<boolean>(false);
 
   // Saved units (Premium perk)

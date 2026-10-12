@@ -87,7 +87,7 @@ export const RegionalView: React.FC<RegionalViewProps> = ({ onBack }) => {
   const done = checkedItems.size;
   const percent = Math.round((done / total) * 100);
 
-  const currentRegionInfo = REGION_DATA[selectedRegion] || REGION_DATA['Centro-Oeste'];
+  const currentRegionInfo = REGION_DATA[selectedRegion] ?? REGION_DATA['Centro-Oeste']!;
 
   const getFeedbackText = () => {
     if (done === total) return 'Ótimo! Você revisou todos os cuidados desta lista.';
