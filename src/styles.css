@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "leaflet/dist/leaflet.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -140,5 +141,47 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
   }
+}
+
+/* Protege Kids — estilos originais do app */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Leaflet container polish & Dark Mode */
+.leaflet-container {
+  font-family: inherit;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: #0d130e;
+}
+.leaflet-bar a {
+  background-color: #1a221b !important;
+  color: #dfff55 !important;
+  border-bottom: 1px solid #2b392a !important;
+}
+.leaflet-bar a:hover {
+  background-color: #273527 !important;
+}
+.leaflet-control-attribution {
+  background: rgba(13, 19, 14, 0.8) !important;
+  color: #8b9985 !important;
+  font-size: 10px !important;
+}
+.leaflet-control-attribution a {
+  color: #a3e635 !important;
+}
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #151d16 !important;
+  color: #e5ede2 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid #2d3d2c !important;
 }
