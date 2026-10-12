@@ -108,10 +108,10 @@ export const MythsView: React.FC<MythsViewProps> = ({ onBack }) => {
     : DETAILED_MYTHS.filter(m => m.category === selectedCategory);
 
   const currentQ = QUIZ_QUESTIONS[currentQuizIdx];
-  const isQAnswered = quizAnswers[currentQ?.id] !== undefined;
+  const isQAnswered = currentQ ? quizAnswers[currentQ.id] !== undefined : false;
 
   const handleQuizAnswer = (choice: boolean) => {
-    if (isQAnswered) return;
+    if (isQAnswered || !currentQ) return;
     const isCorrect = choice === currentQ.correctAnswer;
     if (isCorrect) setQuizScore(s => s + 1);
     setQuizAnswers(prev => ({ ...prev, [currentQ.id]: choice }));

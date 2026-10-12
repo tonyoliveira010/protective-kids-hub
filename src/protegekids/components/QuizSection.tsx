@@ -8,7 +8,7 @@ export const QuizSection: React.FC = () => {
   const [showExplanation, setShowExplanation] = useState<boolean>(false);
   const [score, setScore] = useState<number>(0);
 
-  const currentQ: QuizQuestion = QUIZ_QUESTIONS[currentIndex];
+  const currentQ: QuizQuestion = QUIZ_QUESTIONS[currentIndex] ?? QUIZ_QUESTIONS[0]!;
   const total = QUIZ_QUESTIONS.length;
   const isAnswered = userAnswers[currentQ.id] !== undefined;
 
