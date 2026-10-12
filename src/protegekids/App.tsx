@@ -278,10 +278,12 @@ export default function App() {
                 <span>192</span>
               </button>
 
+              {themeToggleButton('md')}
+
               {/* Profile trigger */}
               <button
                 onClick={() => navigateTo('perfil')}
-                className="w-9 h-9 rounded-full flex items-center justify-center transition-colors text-sm font-bold cursor-pointer bg-pk-surface text-pk-text hover:bg-pk-surface"
+                className="w-9 h-9 rounded-full flex items-center justify-center transition-colors text-sm font-bold cursor-pointer bg-pk-surface text-pk-text hover:bg-pk-border"
                 aria-label="Meu perfil e fontes"
               >
                 <User className="w-4 h-4" />
