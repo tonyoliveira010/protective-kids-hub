@@ -97,21 +97,22 @@
   --pk-danger-text: oklch(0.45 0.12 27);
 }
 
+/* Dark premium clean: preto puro, neutros sem tinta, acento teal discreto */
 .dark {
-  --pk-bg: oklch(0.13 0 0);
-  --pk-card: oklch(0.19 0 0);
-  --pk-surface: oklch(0.24 0.01 180);
-  --pk-border: oklch(0.3 0.01 180);
-  --pk-text: oklch(0.95 0.005 180);
-  --pk-muted: oklch(0.68 0.01 180);
-  --pk-primary: oklch(0.75 0.12 180);
-  --pk-primary-strong: oklch(0.6 0.1 185);
-  --pk-accent: oklch(0.85 0.15 100);
+  --pk-bg: oklch(0.11 0 0);
+  --pk-card: oklch(0.17 0 0);
+  --pk-surface: oklch(0.21 0 0);
+  --pk-border: oklch(0.27 0 0);
+  --pk-text: oklch(0.97 0 0);
+  --pk-muted: oklch(0.7 0 0);
+  --pk-primary: oklch(0.8 0.11 185);
+  --pk-primary-strong: oklch(0.7 0.11 185);
+  --pk-accent: oklch(0.88 0.14 100);
   --pk-danger: oklch(0.7 0.19 27);
-  --pk-danger-strong: oklch(0.6 0.2 27);
-  --pk-danger-bg: oklch(0.25 0.04 27);
-  --pk-danger-border: oklch(0.4 0.08 27);
-  --pk-danger-text: oklch(0.8 0.1 27);
+  --pk-danger-strong: oklch(0.62 0.2 27);
+  --pk-danger-bg: oklch(0.22 0.03 27);
+  --pk-danger-border: oklch(0.36 0.07 27);
+  --pk-danger-text: oklch(0.82 0.09 27);
 }
 
 :root {
@@ -151,9 +152,9 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
+  --background: oklch(0.11 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.17 0 0);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);

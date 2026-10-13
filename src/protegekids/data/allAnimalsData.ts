@@ -66,7 +66,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
   switch (id) {
     case 1:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Tityus_serrulatus_%28Buthidae%29_%2822768698194%29.jpg/960px-Tityus_serrulatus_%28Buthidae%29_%2822768698194%29.jpg',
         imageCaption: 'Tityus serrulatus (Escorpião-amarelo): tronco escuro com pernas e cauda amarelo-claras, serrilha na cauda e ferrão afiado com glândula de veneno.',
         sizeApprox: '6 a 7 cm de comprimento',
         visualTraits: [
@@ -78,7 +78,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 2:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Tityus_Bahiensis_Brasil.jpg',
         imageCaption: 'Tityus bahiensis (Escorpião-marrom): coloração marrom-escura homogênea com manchas avermelhadas e pernas manchadas.',
         sizeApprox: '5 a 7 cm de comprimento',
         visualTraits: [
@@ -91,7 +91,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
     case 7:
     case 8:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1582234033320-b49b3924f92b?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/LoxoscelesGaucho.jpg/960px-LoxoscelesGaucho.jpg',
         imageCaption: 'Loxosceles (Aranha-marrom): coloração marrom uniforme com mancha sutil em forma de violino no cefalotórax e pernas finas.',
         sizeApprox: '1 cm de corpo (até 3-4 cm com as pernas)',
         visualTraits: [
@@ -103,7 +103,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 19:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1588636142475-a62d56692870?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Esta%C3%A7%C3%A3o_Ecol%C3%B3gica_de_Santa_B%C3%A1rbara_Giordano_Rossi_%2812%29.jpg/960px-Esta%C3%A7%C3%A3o_Ecol%C3%B3gica_de_Santa_B%C3%A1rbara_Giordano_Rossi_%2812%29.jpg',
         imageCaption: 'Phoneutria (Aranha-armadeira): postura típica de ataque erguendo os dois pares de patas dianteiras e quelíceras com pelos avermelhados.',
         sizeApprox: '3 a 5 cm de corpo (até 15 cm com pernas)',
         visualTraits: [
@@ -114,7 +114,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 25:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1531386151447-fd76ad50012f?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/88/Bothrops_jararaca_1.jpg',
         imageCaption: 'Bothrops jararaca (Jararaca): padrão de desenhos em V invertido / trapézio ao longo do dorso, fosseta loreal e cauda afilada.',
         sizeApprox: '80 a 120 cm de comprimento',
         visualTraits: [
@@ -125,7 +125,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 36:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Cascavel_-_crotalus_durissus.jpg/960px-Cascavel_-_crotalus_durissus.jpg',
         imageCaption: 'Crotalus durissus (Cascavel): guizo / chocalho córneo na extremidade da cauda e desenhos em losangos claros e escuros.',
         sizeApprox: '100 a 150 cm de comprimento',
         visualTraits: [
@@ -136,7 +136,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 38:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Micrurus_tener.jpg',
         imageCaption: 'Micrurus (Coral-verdadeira): anéis completos coloridos em vermelho, preto e branco/amarelo ao redor de todo o corpo e ventre.',
         sizeApprox: '60 a 90 cm de comprimento',
         visualTraits: [
@@ -147,7 +147,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 46:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/4/47/Lonomia_obliqua.jpg',
         imageCaption: 'Lonomia obliqua (Taturana-de-fogo): espinhos ramificados em formato de pequenos pinheiros verdes-acinzentados agrupados em troncos.',
         sizeApprox: '4 a 6 cm de comprimento',
         visualTraits: [
@@ -158,7 +158,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 49:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Apis_mellifera_flying.jpg/960px-Apis_mellifera_flying.jpg',
         imageCaption: 'Apis mellifera (Abelha africanizada): corpo listrado em amarelo e preto com ferrão farpado que se desprende após a ferroada.',
         sizeApprox: '12 a 15 mm',
         visualTraits: [
@@ -169,7 +169,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 54:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Red_Imported_Fire_Ant_%28Myrmicinae%2C_Solenopsis_invicta%29_%2830518448423%29.jpg/960px-Red_Imported_Fire_Ant_%28Myrmicinae%2C_Solenopsis_invicta%29_%2830518448423%29.jpg',
         imageCaption: 'Solenopsis invicta (Formiga-de-fogo): coloração avermelhada/acobreada, picada dolorosa seguida por pústula estéril em 24h.',
         sizeApprox: '2 a 6 mm de comprimento',
         visualTraits: [
@@ -180,7 +180,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 59:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Amblyomma_cajennense_comm.JPG/960px-Amblyomma_cajennense_comm.JPG',
         imageCaption: 'Amblyomma sculptum (Carrapato-estrela): escudo dorsal escuro com pontuações e linhas claras características (estrela).',
         sizeApprox: '3 a 5 mm (não ingurgitado) até 1,5 cm (fêmea ingurgitada)',
         visualTraits: [
@@ -191,7 +191,7 @@ function getImageForSpecies(id: number): { imageUrl?: string; imageCaption?: str
       };
     case 70:
       return {
-        imageUrl: 'https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Scolopendra_cingulata_%C3%A0_la_Beauch%C3%AAne_MHNT_CUT_2014_14_11.jpg/960px-Scolopendra_cingulata_%C3%A0_la_Beauch%C3%AAne_MHNT_CUT_2014_14_11.jpg',
         imageCaption: 'Scolopendra (Lacraia): corpo alongado e achatado com múltiplos segmentos, cada um com 1 par de pernas e forcípulas venenosas na cabeça.',
         sizeApprox: '10 a 25 cm de comprimento',
         visualTraits: [
