@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhoneCall, AlertTriangle, X, ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { PhoneCall, AlertTriangle, X, ShieldAlert, CheckCircle2, Siren, HeartPulse, Flame } from 'lucide-react';
 
 interface EmergencyModalProps {
   isOpen: boolean;
@@ -10,8 +10,8 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-0 sm:p-4 animate-in fade-in duration-200">
-      <div 
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/70 backdrop-blur-sm p-0 sm:p-4 animate-in fade-in duration-200">
+      <div
         className="w-full max-w-lg bg-pk-card rounded-t-3xl sm:rounded-3xl shadow-2xl border border-pk-border overflow-hidden max-h-[92vh] flex flex-col"
         role="dialog"
         aria-modal="true"
@@ -20,17 +20,17 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
         {/* Header */}
         <div className="bg-pk-danger-bg border-b border-pk-danger-border p-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-pk-danger text-white flex items-center justify-center font-bold">
-              <ShieldAlert className="w-6 h-6" />
+            <div className="w-11 h-11 rounded-2xl bg-pk-danger text-white flex items-center justify-center shadow-md">
+              <Siren className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-pk-danger">Atendimento de Urgência</span>
-              <h2 id="emergency-title" className="text-lg font-bold text-pk-danger-text">Canais Oficiais Imediatos</h2>
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-pk-danger">Atendimento de Urgência</span>
+              <h2 id="emergency-title" className="text-lg font-extrabold text-pk-danger-text tracking-tight">Canais Oficiais Imediatos</h2>
             </div>
           </div>
-          <button 
+          <button
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-white/80 hover:bg-pk-card text-pk-danger-text flex items-center justify-center transition-colors"
+            className="w-9 h-9 rounded-full bg-pk-card hover:bg-pk-surface text-pk-text border border-pk-border flex items-center justify-center transition-colors cursor-pointer"
             aria-label="Fechar"
           >
             <X className="w-5 h-5" />
@@ -39,8 +39,8 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
 
         {/* Content */}
         <div className="p-5 overflow-y-auto space-y-4">
-          <div className="bg-amber-50 rounded-2xl p-4 border border-amber-200/70 text-sm text-amber-900 flex gap-3">
-            <AlertTriangle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
+          <div className="bg-pk-danger-bg rounded-2xl p-4 border border-pk-danger-border text-sm text-pk-danger-text flex gap-3">
+            <AlertTriangle className="w-5 h-5 text-pk-danger shrink-0 mt-0.5" />
             <div>
               <strong className="block font-bold mb-1">Mantenha a calma e observe a criança:</strong>
               Se houver <strong>dificuldade respiratória</strong>, <strong>vômitos repetidos</strong>, <strong>desmaio</strong> ou suspeita de <strong>escorpião em bebê ou criança</strong>, procure socorro médico agora mesmo.
@@ -48,16 +48,16 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-pk-muted">Ligue gratuitamente (Brasil)</h3>
+            <h3 className="text-[11px] font-extrabold uppercase tracking-wider text-pk-muted">Ligue gratuitamente (Brasil)</h3>
 
             {/* SAMU 192 */}
-            <a 
-              href="tel:192" 
+            <a
+              href="tel:192"
               className="flex items-center justify-between p-4 bg-pk-danger hover:bg-pk-danger-strong text-white rounded-2xl transition-all shadow-md group"
             >
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-white">
-                  <PhoneCall className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                  <HeartPulse className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-white/80">Emergência Médica / Resgate</div>
@@ -69,13 +69,13 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
             </a>
 
             {/* CIATox Anvisa */}
-            <a 
-              href="tel:08007226001" 
-              className="flex items-center justify-between p-4 bg-pk-primary hover:bg-pk-primary-strong text-white rounded-2xl transition-all shadow-md group"
+            <a
+              href="tel:08007226001"
+              className="flex items-center justify-between p-4 bg-pk-primary-strong hover:bg-pk-primary text-white rounded-2xl transition-all shadow-md group"
             >
               <div className="flex items-center gap-3.5">
                 <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-white">
-                  <PhoneCall className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                  <ShieldAlert className="w-6 h-6 group-hover:scale-110 transition-transform" />
                 </div>
                 <div>
                   <div className="text-xs font-semibold text-white/80">Disque-Intoxicação Nacional (Anvisa)</div>
@@ -87,25 +87,25 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
             </a>
 
             {/* Bombeiros 193 */}
-            <a 
-              href="tel:193" 
-              className="flex items-center justify-between p-3.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-2xl transition-all"
+            <a
+              href="tel:193"
+              className="flex items-center justify-between p-3.5 bg-pk-surface hover:bg-pk-border text-pk-text rounded-2xl transition-all border border-pk-border"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-pk-card flex items-center justify-center text-slate-700">
-                  <PhoneCall className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-pk-card border border-pk-border flex items-center justify-center text-pk-text">
+                  <Flame className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs text-slate-500">Corpo de Bombeiros</div>
-                  <div className="text-sm font-bold text-slate-900">Resgate de ninhos / Colmeias (193)</div>
+                  <div className="text-xs text-pk-muted">Corpo de Bombeiros</div>
+                  <div className="text-sm font-bold text-pk-text">Resgate de ninhos / Colmeias (193)</div>
                 </div>
               </div>
-              <span className="text-sm font-bold text-slate-600">193</span>
+              <span className="text-sm font-bold text-pk-muted">193</span>
             </a>
           </div>
 
           {/* O que informar na ligação */}
-          <div className="p-4 bg-pk-bg border border-pk-border rounded-2xl space-y-2 text-xs text-pk-muted">
+          <div className="p-4 bg-pk-surface border border-pk-border rounded-2xl space-y-2 text-xs text-pk-muted">
             <div className="font-bold text-pk-primary text-sm flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4" /> Ao falar com o médico regulador:
             </div>
@@ -119,10 +119,10 @@ export const EmergencyModal: React.FC<EmergencyModalProps> = ({ isOpen, onClose 
         </div>
 
         {/* Footer */}
-        <div className="p-4 bg-slate-50 border-t border-slate-100 flex justify-end">
+        <div className="p-4 bg-pk-surface border-t border-pk-border flex justify-end">
           <button
             onClick={onClose}
-            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-sm transition-colors"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-pk-border hover:bg-pk-surface text-pk-text font-bold text-sm transition-colors cursor-pointer"
           >
             Fechar Janela
           </button>
