@@ -404,92 +404,29 @@ export default function App() {
                 </div>
 
                 <div className="overflow-x-auto no-scrollbar pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
-                  <div className="grid grid-rows-2 grid-flow-col gap-2.5 w-max">
-                    {/* Item 1: Insetos */}
-                    <button
-                      onClick={() => {
-                        setActiveCategory('Insetos');
-                        navigateTo('guia');
-                      }}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
-                    >
-                      <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🦋</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Insetos</strong>
-                      <span className="text-[11px] text-pk-muted truncate block">Abelhas, mosquitos</span>
-                    </button>
-
-                    {/* Item 2: Aracnídeos */}
-                    <button
-                      onClick={() => {
-                        setActiveCategory('Aracnídeos');
-                        navigateTo('guia');
-                      }}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
-                    >
-                      <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🕷️</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Aracnídeos</strong>
-                      <span className="text-[11px] text-pk-muted truncate block">Aranhas e escorpiões</span>
-                    </button>
-
-                    {/* Item 3: Como agir */}
-                    <button
-                      onClick={() => navigateTo('orientacoes')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
-                    >
-                      <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🩹</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Como agir</strong>
-                      <span className="text-[11px] text-pk-muted truncate block">Primeiros socorros</span>
-                    </button>
-
-                    {/* Item 4: Meus salvos */}
-                    <button
-                      onClick={() => navigateTo('salvos')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
-                    >
-                      <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">♡</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Meus salvos</strong>
-                      <span className="text-[11px] text-pk-muted truncate block">{savedIds.size} fichas guardadas</span>
-                    </button>
-
-                    {/* Item 5: Mito ou Verdade */}
-                    <button
-                      onClick={() => navigateTo('mitos')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
-                    >
-                      <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🧠</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Mito ou Verdade</strong>
-                      <span className="text-[11px] text-pk-muted truncate block">Fatos que salvam vidas</span>
-                    </button>
-
-                    {/* Item 6: Ambiente Seguro */}
-                    <button
-                      onClick={() => navigateTo('checklist')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
-                    >
-                      <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🏡</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Ambiente Seguro</strong>
-                      <span className="text-[11px] text-pk-muted truncate block">Checklist no lar 🌱</span>
-                    </button>
-
-                    {/* Item 7: Regional e Épocas */}
-                    <button
-                      onClick={() => navigateTo('regional')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
-                    >
-                      <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">🌦️</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Regional</strong>
-                      <span className="text-[11px] text-pk-muted truncate block">Hábitos e épocas</span>
-                    </button>
-
-                    {/* Item 8: Fontes Oficiais */}
-                    <button
-                      onClick={() => navigateTo('fontes')}
-                      className="w-[160px] sm:w-[172px] p-3.5 bg-pk-card rounded-2xl border border-pk-border hover:border-pk-border text-left transition-all hover:shadow-xs group shrink-0 cursor-pointer"
-                    >
-                      <span className="text-2xl block mb-1 group-hover:scale-110 transition-transform">📚</span>
-                      <strong className="block text-xs sm:text-sm font-bold text-pk-text">Fontes Oficiais</strong>
-                      <span className="text-[11px] text-pk-muted truncate block">Ministério & Fiocruz</span>
-                    </button>
+                  <div className="grid grid-rows-2 grid-flow-col gap-3 w-max">
+                    {[
+                      { emoji: '🦋', title: 'Insetos', desc: 'Abelhas, mosquitos', chip: 'bg-sky-100 dark:bg-sky-500/15', action: () => { setActiveCategory('Insetos'); navigateTo('guia'); } },
+                      { emoji: '🕷️', title: 'Aracnídeos', desc: 'Aranhas e escorpiões', chip: 'bg-violet-100 dark:bg-violet-500/15', action: () => { setActiveCategory('Aracnídeos'); navigateTo('guia'); } },
+                      { emoji: '🩹', title: 'Como agir', desc: 'Primeiros socorros', chip: 'bg-rose-100 dark:bg-rose-500/15', action: () => navigateTo('orientacoes') },
+                      { emoji: '💛', title: 'Meus salvos', desc: `${savedIds.size} fichas guardadas`, chip: 'bg-amber-100 dark:bg-amber-500/15', action: () => navigateTo('salvos') },
+                      { emoji: '🧠', title: 'Mito ou Verdade', desc: 'Fatos que salvam vidas', chip: 'bg-fuchsia-100 dark:bg-fuchsia-500/15', action: () => navigateTo('mitos') },
+                      { emoji: '🏡', title: 'Ambiente Seguro', desc: 'Checklist no lar', chip: 'bg-teal-100 dark:bg-teal-500/15', action: () => navigateTo('checklist') },
+                      { emoji: '🌦️', title: 'Regional', desc: 'Hábitos e épocas', chip: 'bg-cyan-100 dark:bg-cyan-500/15', action: () => navigateTo('regional') },
+                      { emoji: '📚', title: 'Fontes Oficiais', desc: 'Ministério & Fiocruz', chip: 'bg-indigo-100 dark:bg-indigo-500/15', action: () => navigateTo('fontes') },
+                    ].map((item) => (
+                      <button
+                        key={item.title}
+                        onClick={item.action}
+                        className="w-[150px] sm:w-[162px] p-3.5 bg-pk-card rounded-3xl border border-pk-border text-left transition-all hover:shadow-lg hover:-translate-y-0.5 hover:border-pk-primary/40 group shrink-0 cursor-pointer"
+                      >
+                        <span className={`w-11 h-11 rounded-2xl ${item.chip} flex items-center justify-center text-2xl mb-2 group-hover:scale-110 group-hover:rotate-3 transition-transform`}>
+                          {item.emoji}
+                        </span>
+                        <strong className="block text-xs sm:text-sm font-extrabold text-pk-text tracking-tight">{item.title}</strong>
+                        <span className="text-[11px] text-pk-muted truncate block">{item.desc}</span>
+                      </button>
+                    ))}
                   </div>
                 </div>
               </div>
